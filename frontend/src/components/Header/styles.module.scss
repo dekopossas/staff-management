@@ -14,11 +14,16 @@
     padding: 0.25rem 0 0.25rem 2rem;
     border-left: 1px solid var(--gray-100);
   }
-  
+
   a {
     display: flex;
     align-items: center;
     text-decoration: none;
+  }
+  
+  span {
+    margin-left: auto;
+    text-transform: capitalize;
   }
 
   .logo {
