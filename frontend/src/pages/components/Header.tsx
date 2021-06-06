@@ -4,6 +4,7 @@ function Header() {
   return (
     <div>
       <span>
+        <img src="assets/img/logo.png" alt="logo" />
           Header
       </span>
     </div>
