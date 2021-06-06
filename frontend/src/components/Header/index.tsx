@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './styles.module.scss';
 
 function Header() {
+  const currentDate = new Date().toLocaleDateString();
+
   return (
     <header className={styles.header}>
       <img className={styles.logo} src="/logo.png" alt="logo" />
