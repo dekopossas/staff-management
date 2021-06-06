@@ -3,17 +3,13 @@ import styles from './styles.module.scss';
 
 function Header() {
   return (
-    <>
-      <div className={styles.header}>
-        <span>
-          <img src="/logo.png" className={styles.logo} alt="logo" />
-        </span>
-        <span className={styles.title_group}>
-          <i className="material-icons">home</i>
-          Staff CRUD Manager
-        </span>
-      </div>
-    </>
+    <header className={styles.header}>
+      <img className={styles.logo} src="/logo.png" alt="logo" />
+
+      <p>Staff CRUD Manager</p>
+
+      <span>Qui, 8 abril</span>
+    </header>
   );
 }
 
