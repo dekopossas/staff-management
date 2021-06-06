@@ -11,7 +11,7 @@ function NavSide() {
             Início
 
             <i className="material-icons">storefront</i>
-            Produtos
+            Cadastro
         </div>
       </div>
     </div>
