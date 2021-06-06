@@ -1,16 +1,16 @@
 import React from 'react';
-import './styles.module.scss';
+import styles from './styles.module.scss';
 
 function Header() {
   return (
     <>
-      <div className="header">
+      <div className={styles.header}>
         <span>
-          <img className="logo" alt="logo" />
+          <img src="/logo.png" className={styles.logo} alt="logo" />
         </span>
-        <span className="title-group">
+        <span className={styles.title_group}>
           <i className="material-icons">home</i>
-          Aplicação CRUD
+          Staff CRUD Manager
         </span>
       </div>
     </>
