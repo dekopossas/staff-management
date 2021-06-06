@@ -1,24 +1,22 @@
-// sass instalado mas não é o foco ainda.
-
 .header {
   display: flex;
   align-items: center;
-}
 
-.header a {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
 
-.header .logo {
-  max-height: 32px;
-}
+  .logo {
+    max-height: 32px;
+  }
+  
+  .title-group {
+    padding-left: 25px;
+  }
 
-.header .title-group {
-  padding-left: 25px;
-}
-
-.header .title-group i {
-  padding-right: 5px;
+  .title-group i {
+    padding-right: 5px;
+  }
 }
