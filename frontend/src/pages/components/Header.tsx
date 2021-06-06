@@ -1,14 +1,20 @@
-import React from 'react'
+import React from 'react';
+import './styles.module.scss';
 
 function Header() {
   return (
-    <div>
-      <span>
-        <img src="src/assets/img/logo.png" alt="logo" />
-          Header
-      </span>
-    </div>
-  )
+    <>
+      <div className="header">
+        <span>
+          <img className="logo" alt="logo" />
+        </span>
+        <span className="title-group">
+          <i className="material-icons">home</i>
+          Aplicação CRUD
+        </span>
+      </div>
+    </>
+  );
 }
 
 export default Header;
