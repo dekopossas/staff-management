@@ -28,10 +28,13 @@ function Home() {
   return (
     <div className={styles.container}>
       <Header />
-      <NavSide />
-      {
-        employees?.map(employee => employee.nome)
-      }
+      <div className={styles.esquerda}>
+        <NavSide />
+        {
+          employees?.map(employee => employee.nome)
+        }
+
+      </div>
       
     </div>
   );
