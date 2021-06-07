@@ -1,6 +1,6 @@
 import styles from './styles.module.scss';
 
-function Home() {
+function EmployeeTable() {
 
   return (
     <div className={styles.container}>
@@ -9,4 +9,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default EmployeeTable;
