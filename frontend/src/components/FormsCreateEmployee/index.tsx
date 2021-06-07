@@ -5,8 +5,9 @@ import styles from './styles.module.scss';
 type Profile = {
   fullName: string;
   cpf: number;
-  
-
+  wage: number;
+  discount: string;
+  dependents: number;
 }
 
 function FormsCreateEmployee() {
@@ -26,7 +27,7 @@ function FormsCreateEmployee() {
         </div>
         <div className={styles.halfBox}>
           <label htmlFor="cpf">CPF:</label>
-          <input ref={register} type="text" name="cpf" id="cpf" placeholder="Digite o cpf" />
+          <input ref={register} type="number" name="cpf" id="cpf" placeholder="Digite o cpf" />
         </div>
         <div className={styles.halfBox}>
           <label htmlFor="wage">Salário Bruto:</label>
