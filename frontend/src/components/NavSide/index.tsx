@@ -8,7 +8,7 @@ function NavSide() {
     <div className={styles.container}>
       <div className="sidenav">
         <ul className="nav-list">
-          <Link to="/home" className="menu-bars">
+          <Link to="/" className="menu-bars">
             <li className="material-icons">home</li>
             Início
           </Link>
