@@ -46,3 +46,12 @@ input {
 input:focus {
   border-color: #E60084
 }
+
+input[type="submit"] {
+  background-color: #E60084;
+  color: var(--white);
+  border: none;
+  border-radius: 20px;
+  height: 40px;
+  cursor: pointer;
+}
