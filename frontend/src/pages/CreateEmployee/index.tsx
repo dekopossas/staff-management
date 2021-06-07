@@ -2,7 +2,7 @@
 import FormsCreateEmployee from "../../components/FormsCreateEmployee";
 import Header from "../../components/Header";
 import NavSide from "../../components/NavSide";
-import styles from './styles.module.scss';
+// import styles from './styles.module.scss';
 import './style.css';
 
 
