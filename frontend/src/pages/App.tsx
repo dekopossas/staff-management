@@ -1,16 +1,15 @@
 import React from "react";
-import Header from "../components/Header";
-import NavSide from "../components/NavSide";
+import { BrowserRouter } from 'react-router-dom';
+import Routes from "../routes";
 import '../styles/global.scss'
-import Home from "./Home";
+
+
 
 function App() {
   return (
-    <div>
-      <Header />
-      <NavSide />
-      <Home />
-    </div>
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
   );
 }
 

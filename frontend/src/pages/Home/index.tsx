@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Header from "../../components/Header";
+import NavSide from "../../components/NavSide";
 
 interface employee {
     nome: string,
@@ -24,9 +26,12 @@ function Home() {
 
   return (
     <div>
+      <Header />
+      <NavSide />
       {
         employees?.map(employee => employee.nome)
       }
+      
     </div>
   );
 }
