@@ -1,8 +1,10 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import styles from './styles.module.scss';
+
 
 function FormsCreateEmployee() {
   return (
-    <div id="main-container">
+    <div className={styles.container}>
       <h1>Cadastrando Funcionario</h1>
       <form id="register-form">
         <div className="full-box">
