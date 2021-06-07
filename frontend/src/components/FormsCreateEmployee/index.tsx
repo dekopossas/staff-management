@@ -1,7 +1,10 @@
 // import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 import styles from './styles.module.scss';
 
 function FormsCreateEmployee() {
+  const {register} = useForm();
+
   return (
     <div className={styles.container}>
       <h1>Cadastrando Funcionario</h1>
