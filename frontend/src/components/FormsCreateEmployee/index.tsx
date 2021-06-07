@@ -20,7 +20,7 @@ function FormsCreateEmployee() {
   return (
     <div className={styles.container}>
       <h1>Cadastrando Funcionario</h1>
-      <form onSubmit={handleSubmit} className={styles.formRegister}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.formRegister}>
         <div className={styles.fullBox}>
           <label htmlFor="fullName">Nome do Funcionário:</label>
           <input ref={register} type="text" name="fullName" id="fullName" placeholder="Digite o nome" />
