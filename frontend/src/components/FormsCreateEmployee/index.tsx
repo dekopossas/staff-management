@@ -26,7 +26,7 @@ function FormsCreateEmployee() {
         <div className="half-box">
           <label htmlFor="discount" >Desconto na Previdencia:
           
-            <input type="number" name="discount" id="discount" placeholder="Digite o Desconto na Previdencia"/>
+            <input type="text" name="discount" id="discount" placeholder="Digite o Desconto na Previdencia"/>
           </label>
         </div>
         <div className="half-box">
@@ -35,6 +35,9 @@ function FormsCreateEmployee() {
             <input type="number" name="dependents" id="dependents" placeholder="Digite o Número de Dependentes"/>
           </label>
         </div>
+        <div className="half-box">
+            <input type="submit" value="registrar" id="btn-submit" />
+        </div>       
       </form>
     </div>
   );
