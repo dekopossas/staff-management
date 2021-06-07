@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import EmployeeTable from "../../components/EmployeeTable";
 import Header from "../../components/Header";
 import NavSide from "../../components/NavSide";
 import './style.css';
@@ -31,10 +32,7 @@ function Home() {
       <Header />
       <div className="container">
         <NavSide />
-        {
-          employees?.map(employee => employee.nome)
-        }
-
+        <EmployeeTable />
       </div>
       
     </div>
