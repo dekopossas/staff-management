@@ -23,20 +23,23 @@ function FormsCreateEmployee() {
       <form onSubmit={onSubmit} className={styles.formRegister}>
         <div className={styles.fullBox}>
           <label htmlFor="fullName">Nome do Funcionário:</label>
-          <input ref={register({ register: true})} type="text" name="fullName" id="fullName" placeholder="Digite o nome" />
+          <input ref={register({ required: true})} type="text" name="fullName" id="fullName" placeholder="Digite o nome" />
+          {
+            errors.fullName && <div className={styles.errorValidation}>Digite o nome</div>
+          }
         </div>
         <div className={styles.halfBox}>
           <label htmlFor="cpf">CPF:</label>
-          <input ref={register({ register: true})} type="number" name="cpf" id="cpf" placeholder="Digite o cpf" />
+          <input ref={register({ required: true})} type="number" name="cpf" id="cpf" placeholder="Digite o cpf" />
         </div>
         <div className={styles.halfBox}>
           <label htmlFor="wage">Salário Bruto:</label>
-          <input ref={register({ register: true})} type="number" name="wage" id="wage" placeholder="Salário Bruto" />
+          <input ref={register({ required: true})} type="number" name="wage" id="wage" placeholder="Salário Bruto" />
         </div>
         <div className={styles.halfBox}>
           <label htmlFor="discount">Desconto na Previdência:</label>
           <input
-            ref={register({ register: true})}
+            ref={register({ required: true})}
             id="discount"
             type="text"
             name="discount"
@@ -46,7 +49,7 @@ function FormsCreateEmployee() {
         <div className={styles.halfBox}>
           <label htmlFor="dependents">Número de Dependentes:</label>
           <input
-            ref={register({ register: true})}
+            ref={register({ required: true})}
             id="dependents"
             type="number"
             name="dependents"
