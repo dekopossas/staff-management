@@ -7,44 +7,29 @@ function FormsCreateEmployee() {
       <h1>Cadastrando Funcionario</h1>
       <form className={styles.register}>
         <div className={styles.fullBox}>
-          <label htmlFor="name">
-            Nome do Funcionário:
-            <input type="text" name="name" id="name" placeholder="Digite o nome" />
-          </label>
+          <label htmlFor="name">Nome do Funcionário:</label>
+          <input type="text" name="name" id="name" placeholder="Digite o nome" />
         </div>
         <div className={styles.halfBox}>
-          <label htmlFor="name">
-            CPF:
-            <input type="text" name="cpf" id="cpf" placeholder="Digite o cpf" />
-          </label>
+          <label htmlFor="name">CPF:</label>
+          <input type="text" name="cpf" id="cpf" placeholder="Digite o cpf" />
         </div>
         <div className={styles.halfBox}>
-          <label htmlFor="wage">
-            Salário Bruto:
-            <input type="number" name="wage" id="wage" placeholder="Salário Bruto" />
-          </label>
+          <label htmlFor="wage">Salário Bruto:</label>
+          <input type="number" name="wage" id="wage" placeholder="Salário Bruto" />
         </div>
         <div className={styles.halfBox}>
-          <label htmlFor="discount">
-            Desconto na Previdência:
-            <input
-              type="text"
-              name="discount"
-              id="discount"
-              placeholder="Desconto na Previdência"
-            />
-          </label>
+          <label htmlFor="discount">Desconto na Previdência:</label>
+          <input type="text" name="discount" id="discount" placeholder="Desconto na Previdência" />
         </div>
         <div className={styles.halfBox}>
-          <label htmlFor="dependents">
-            Número de Dependentes:
-            <input
-              type="number"
-              name="dependents"
-              id="dependents"
-              placeholder="Número de Dependentes"
-            />
-          </label>
+          <label htmlFor="dependents">Número de Dependentes:</label>
+          <input
+            type="number"
+            name="dependents"
+            id="dependents"
+            placeholder="Número de Dependentes"
+          />
         </div>
         <div className={styles.halfBox}>
           <input type="submit" value="registrar" id="btn-submit" />
