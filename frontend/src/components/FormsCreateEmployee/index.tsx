@@ -22,19 +22,19 @@ function FormsCreateEmployee() {
         <div className={styles.halfBox}>
           <label htmlFor="wage" >Salário Bruto:
           
-            <input type="number" name="wage" id="wage" placeholder="Digite o Salário Bruto"/>
+            <input type="number" name="wage" id="wage" placeholder="Salário Bruto"/>
           </label>
         </div>
         <div className={styles.halfBox}>
-          <label htmlFor="discount" >Desconto na Previdencia:
+          <label htmlFor="discount" >Desconto na Previdência:
           
-            <input type="text" name="discount" id="discount" placeholder="Digite o Desconto na Previdencia"/>
+            <input type="text" name="discount" id="discount" placeholder="Desconto na Previdência"/>
           </label>
         </div>
         <div className={styles.halfBox}>
           <label htmlFor="dependents" >Número de Dependentes:
           
-            <input type="number" name="dependents" id="dependents" placeholder="Digite o Número de Dependentes"/>
+            <input type="number" name="dependents" id="dependents" placeholder="Número de Dependentes"/>
           </label>
         </div>
         <div className={styles.halfBox}>
