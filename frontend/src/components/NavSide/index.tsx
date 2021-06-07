@@ -1,18 +1,18 @@
 import React from 'react';
 
-// import styles from './styles.module.scss';
+import styles from './styles.module.scss';
 
 function NavSide() {
   return (
-    <div className="container">
+    <div className={styles.container}>
       <div className="sidenav" >
-        <div className="nav-list">
-            <i className="material-icons">home</i>
+        <ul className="nav-list">
+            <li className="material-icons">home</li>
             Início
 
-            <i className="material-icons">storefront</i>
+            <li className="material-icons">storefront</li>
             Cadastro
-        </div>
+        </ul>
       </div>
     </div>
   );
