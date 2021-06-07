@@ -2,6 +2,13 @@
 import { useForm } from 'react-hook-form';
 import styles from './styles.module.scss';
 
+type Profile = {
+  fullName: string;
+  cpf: number;
+  
+
+}
+
 function FormsCreateEmployee() {
   const { register, handleSubmit } = useForm();
 
@@ -14,11 +21,11 @@ function FormsCreateEmployee() {
       <h1>Cadastrando Funcionario</h1>
       <form className={styles.formRegister}>
         <div className={styles.fullBox}>
-          <label htmlFor="name">Nome do Funcionário:</label>
-          <input ref={register} type="text" name="name" id="name" placeholder="Digite o nome" />
+          <label htmlFor="fullName">Nome do Funcionário:</label>
+          <input ref={register} type="text" name="fullName" id="fullName" placeholder="Digite o nome" />
         </div>
         <div className={styles.halfBox}>
-          <label htmlFor="name">CPF:</label>
+          <label htmlFor="cpf">CPF:</label>
           <input ref={register} type="text" name="cpf" id="cpf" placeholder="Digite o cpf" />
         </div>
         <div className={styles.halfBox}>
