@@ -55,3 +55,16 @@ input[type="submit"] {
   height: 40px;
   cursor: pointer;
 }
+
+// validações
+
+.error-validation {
+  color: #FF1A1A;
+  position: absolute;
+  top: 57px;
+  font-size: .8rem;
+}
+
+.template {
+  display: none;
+}
