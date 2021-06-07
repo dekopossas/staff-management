@@ -2,7 +2,7 @@ function FormsCreateEmployee() {
   return (
     <div>
       <h1>Cadastro</h1>
-     <input type="text" />
+      <input type="text" />
     </div>
   );
 }
