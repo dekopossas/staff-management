@@ -1,4 +1,5 @@
-// import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+// import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './styles.module.scss';
 
@@ -13,8 +14,11 @@ type Profile = {
 function FormsCreateEmployee() {
   const { register, handleSubmit } = useForm<Profile>();
 
+  const history = useHistory();
+
   const onSubmit = handleSubmit((data: Profile) => {
     alert(JSON.stringify(data));
+    history.push('/products');
   });
 
   return (
@@ -24,7 +28,7 @@ function FormsCreateEmployee() {
         <div className={styles.fullBox}>
           <label htmlFor="fullName">Nome do Funcionário:</label>
           <input
-            {...register("fullName")}
+            {...register('fullName')}
             type="text"
             name="fullName"
             id="fullName"
@@ -33,18 +37,12 @@ function FormsCreateEmployee() {
         </div>
         <div className={styles.halfBox}>
           <label htmlFor="cpf">CPF:</label>
-          <input
-            {...register("cpf")}
-            type="text"
-            name="cpf"
-            id="cpf"
-            placeholder="Digite o cpf"
-          />
+          <input {...register('cpf')} type="text" name="cpf" id="cpf" placeholder="Digite o cpf" />
         </div>
         <div className={styles.halfBox}>
           <label htmlFor="wage">Salário Bruto:</label>
           <input
-            {...register("wage")}
+            {...register('wage')}
             type="number"
             name="wage"
             id="wage"
@@ -54,7 +52,7 @@ function FormsCreateEmployee() {
         <div className={styles.halfBox}>
           <label htmlFor="discount">Desconto na Previdência:</label>
           <input
-            {...register("discount")}
+            {...register('discount')}
             id="discount"
             type="text"
             name="discount"
@@ -64,7 +62,7 @@ function FormsCreateEmployee() {
         <div className={styles.halfBox}>
           <label htmlFor="dependents">Número de Dependentes:</label>
           <input
-            {...register("dependents")}
+            {...register('dependents')}
             id="dependents"
             type="number"
             name="dependents"
@@ -72,7 +70,12 @@ function FormsCreateEmployee() {
           />
         </div>
         <div className={styles.halfBox}>
-          <input type="submit" value="registrar" id="btn-submit" />
+          <input
+            type="submit"
+            value="registrar"
+            id="btn-submit"
+            // disabled={!(isEmailValid && isPasswordValid)}
+          />
         </div>
       </form>
     </div>
