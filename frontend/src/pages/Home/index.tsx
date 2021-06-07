@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import NavSide from "../../components/NavSide";
+import './style.css';
 import styles from './styles.module.scss';
 
 interface employee {
@@ -28,7 +29,7 @@ function Home() {
   return (
     <div className={styles.container}>
       <Header />
-      <div className={styles.esquerda}>
+      <div className="container">
         <NavSide />
         {
           employees?.map(employee => employee.nome)
