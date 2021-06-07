@@ -11,7 +11,7 @@ type Profile = {
 }
 
 function FormsCreateEmployee() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<Profile>();
 
   const onSubmit = (data: Profile) => {
     alert(JSON.stringify(data));
@@ -20,7 +20,7 @@ function FormsCreateEmployee() {
   return (
     <div className={styles.container}>
       <h1>Cadastrando Funcionario</h1>
-      <form className={styles.formRegister}>
+      <form onSubmit={handleSubmit} className={styles.formRegister}>
         <div className={styles.fullBox}>
           <label htmlFor="fullName">Nome do Funcionário:</label>
           <input ref={register} type="text" name="fullName" id="fullName" placeholder="Digite o nome" />
