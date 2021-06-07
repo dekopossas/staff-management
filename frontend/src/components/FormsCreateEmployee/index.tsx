@@ -8,7 +8,7 @@ function FormsCreateEmployee() {
       <h1>Cadastrando Funcionario</h1>
       <form className={styles.register}>
         <div className={styles.fullBox}>
-          <label htmlFor="name" >Nome do Funcionario:
+          <label htmlFor="name" >Nome do Funcionário:
           
             <input type="text" name="name" id="name" placeholder="Digite o nome"/>
           </label>
