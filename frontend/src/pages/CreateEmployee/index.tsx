@@ -3,7 +3,7 @@ import Header from "../../components/Header";
 import NavSide from "../../components/NavSide";
 
 
-function Home() {
+function CreateEmployee() {
   return (
     <div>
       <Header />
@@ -12,4 +12,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default CreateEmployee;
