@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import NavSide from "../../components/NavSide";
+import styles from './styles.module.scss';
 
 interface employee {
     nome: string,
@@ -25,12 +26,15 @@ function Home() {
   }, [])
 
   return (
-    <div>
+    <div className={styles.container}>
       <Header />
-      <NavSide />
-      {
-        employees?.map(employee => employee.nome)
-      }
+      <div className={styles.esquerda}>
+        <NavSide />
+        {
+          employees?.map(employee => employee.nome)
+        }
+
+      </div>
       
     </div>
   );
