@@ -3,34 +3,45 @@ import { useForm } from 'react-hook-form';
 import styles from './styles.module.scss';
 
 function FormsCreateEmployee() {
-  const {register} = useForm();
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = (data: any) => {
+    alert(JSON.stringify(data));
+  };
 
   return (
     <div className={styles.container}>
       <h1>Cadastrando Funcionario</h1>
-      <form className={styles.register}>
+      <form className={styles.formRegister}>
         <div className={styles.fullBox}>
           <label htmlFor="name">Nome do Funcionário:</label>
-          <input type="text" name="name" id="name" placeholder="Digite o nome" />
+          <input ref={register} type="text" name="name" id="name" placeholder="Digite o nome" />
         </div>
         <div className={styles.halfBox}>
           <label htmlFor="name">CPF:</label>
-          <input type="text" name="cpf" id="cpf" placeholder="Digite o cpf" />
+          <input ref={register} type="text" name="cpf" id="cpf" placeholder="Digite o cpf" />
         </div>
         <div className={styles.halfBox}>
           <label htmlFor="wage">Salário Bruto:</label>
-          <input type="number" name="wage" id="wage" placeholder="Salário Bruto" />
+          <input ref={register} type="number" name="wage" id="wage" placeholder="Salário Bruto" />
         </div>
         <div className={styles.halfBox}>
           <label htmlFor="discount">Desconto na Previdência:</label>
-          <input type="text" name="discount" id="discount" placeholder="Desconto na Previdência" />
+          <input
+            ref={register}
+            id="discount"
+            type="text"
+            name="discount"
+            placeholder="Desconto na Previdência"
+          />
         </div>
         <div className={styles.halfBox}>
           <label htmlFor="dependents">Número de Dependentes:</label>
           <input
+            ref={register}
+            id="dependents"
             type="number"
             name="dependents"
-            id="dependents"
             placeholder="Número de Dependentes"
           />
         </div>
