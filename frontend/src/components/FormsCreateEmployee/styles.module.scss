@@ -14,3 +14,18 @@
     font-size: 1.6rem;
   }
 }
+
+.register {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.fullBox {
+  flex: 1 1 100%;
+  position: relative;
+}
+
+.halfBox {
+  
+}
