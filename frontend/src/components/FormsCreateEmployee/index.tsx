@@ -18,9 +18,21 @@ function FormsCreateEmployee() {
           </label>
         </div>
         <div className="half-box">
-          <label htmlFor="name" >CPF:
+          <label htmlFor="wage" >Salário Bruto:
           
-            <input type="text" name="name" id="name" placeholder="Digite o nome"/>
+            <input type="number" name="wage" id="wage" placeholder="Digite o Salário Bruto"/>
+          </label>
+        </div>
+        <div className="half-box">
+          <label htmlFor="discount" >Desconto na Previdencia:
+          
+            <input type="number" name="discount" id="discount" placeholder="Digite o Desconto na Previdencia"/>
+          </label>
+        </div>
+        <div className="half-box">
+          <label htmlFor="dependents" >Número de Dependentes:
+          
+            <input type="number" name="dependents" id="dependents" placeholder="Digite o Número de Dependentes"/>
           </label>
         </div>
       </form>
