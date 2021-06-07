@@ -10,8 +10,18 @@ function FormsCreateEmployee() {
           
             <input type="text" name="name" id="name" placeholder="Digite o nome"/>
           </label>
-
-
+        </div>
+        <div className="half-box">
+          <label htmlFor="name" >CPF:
+          
+            <input type="text" name="cpf" id="cpf" placeholder="Digite o cpf"/>
+          </label>
+        </div>
+        <div className="half-box">
+          <label htmlFor="name" >CPF:
+          
+            <input type="text" name="name" id="name" placeholder="Digite o nome"/>
+          </label>
         </div>
       </form>
     </div>
