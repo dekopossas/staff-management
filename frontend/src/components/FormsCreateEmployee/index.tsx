@@ -12,7 +12,7 @@ type Profile = {
 function FormsCreateEmployee() {
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: Profile) => {
     alert(JSON.stringify(data));
   };
 
