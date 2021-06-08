@@ -17,8 +17,12 @@ function FormsCreateEmployee() {
 
   const history = useHistory();
 
+  // const validateSubmit = () => {
+  //   if()
+  // }
+
   const onSubmit = handleSubmit(async (data: Profile) => {
-    const jsonData = JSON.stringify(data);
+    const jsonData = data;
 
     const response = await api.post('/employees', jsonData);
 
