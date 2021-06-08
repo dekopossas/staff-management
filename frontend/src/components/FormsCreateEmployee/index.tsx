@@ -14,8 +14,10 @@ type Profile = {
 
 function FormsCreateEmployee() {
   const { register, handleSubmit } = useForm<Profile>();
-
+  
   const history = useHistory();
+
+  const CREATED = 201;
 
   // const validateSubmit = () => {
   //   if()
@@ -26,7 +28,7 @@ function FormsCreateEmployee() {
 
     const response = await api.post('/employees', jsonData);
 
-    if (response.status === 201) {
+    if (response.status === CREATED) {
       history.push('/');
     } else {
       alert('Erro ao cadastrar o usuário');
