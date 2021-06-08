@@ -3,11 +3,11 @@ import styles from './styles.module.scss';
 
 interface employee {
   id:number,
-  nome: string,
+  fullName: string,
   cpf: string,
-  salario: number,
-  desconto: number,
-  dependentes: number
+  wage: number,
+  discount: number,
+  dependents: number
 }
 
 function EmployeeTable() {
@@ -27,7 +27,7 @@ function EmployeeTable() {
   return (
     <div className={styles.container}>
       {
-        employees?.map(employee => <div key={employee.id}>{employee.nome}</div>)
+        employees?.map(employee => <div key={employee.id}>{employee.fullName}</div>)
       }
     </div>
   );
