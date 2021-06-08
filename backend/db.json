@@ -47,6 +47,30 @@
       "discount": "600",
       "dependents": "2",
       "id": 6
+    },
+    {
+      "fullName": "",
+      "cpf": "",
+      "wage": "",
+      "discount": "",
+      "dependents": "",
+      "id": 7
+    },
+    {
+      "fullName": "",
+      "cpf": "",
+      "wage": "",
+      "discount": "",
+      "dependents": "",
+      "id": 8
+    },
+    {
+      "fullName": "diana",
+      "cpf": "108.667.886-97",
+      "wage": "5000",
+      "discount": "600",
+      "dependents": "2",
+      "id": 9
     }
   ]
 }

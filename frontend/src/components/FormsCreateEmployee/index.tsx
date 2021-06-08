@@ -19,14 +19,9 @@ function FormsCreateEmployee() {
 
   const CREATED = 201;
 
-  // const validateSubmit = () => {
-  //   if()
-  // }
-
   const onSubmit = handleSubmit(async (data: Profile) => {
-    const jsonData = data;
 
-    const response = await api.post('/employees', jsonData);
+    const response = await api.post('/employees', data);
 
     if (response.status === CREATED) {
       history.push('/');
