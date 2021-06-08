@@ -7,9 +7,9 @@ import api from '../../services/api';
 type Profile = {
   fullName: string;
   cpf: string;
-  wage: number;
+  wage: string;
   discount: string;
-  dependents: number;
+  dependents: string;
 };
 
 function FormsCreateEmployee() {
@@ -20,13 +20,17 @@ function FormsCreateEmployee() {
   const CREATED = 201;
 
   const onSubmit = handleSubmit(async (data: Profile) => {
-
-    const response = await api.post('/employees', data);
-
-    if (response.status === CREATED) {
-      history.push('/');
+    const {fullName, cpf, wage, dependents, discount} = data;
+    if(fullName !== '' && cpf !== '' && wage !== '' && dependents !== '' && discount !== '') {
+      const response = await api.post('/employees', data);
+  
+      if (response.status === CREATED) {
+        history.push('/');
+      } else {
+        alert('Erro ao cadastrar o usuário');
+      }
     } else {
-      alert('Erro ao cadastrar o usuário');
+      alert('Preencha todos os dados, Por favor.')
     }
   });
 
@@ -52,7 +56,7 @@ function FormsCreateEmployee() {
           <label htmlFor="wage">Salário Bruto:</label>
           <input
             {...register('wage')}
-            type="number"
+            type="text"
             name="wage"
             id="wage"
             placeholder="Salário Bruto"
@@ -73,7 +77,7 @@ function FormsCreateEmployee() {
           <input
             {...register('dependents')}
             id="dependents"
-            type="number"
+            type="text"
             name="dependents"
             placeholder="Número de Dependentes"
           />
