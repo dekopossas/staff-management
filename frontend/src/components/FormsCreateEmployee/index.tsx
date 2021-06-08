@@ -19,6 +19,7 @@ function FormsCreateEmployee() {
 
   const CREATED = 201;
 
+  // Preferiria fazer a validação separada com mais calma, esse trecho merece um refactor
   const onSubmit = handleSubmit(async (data: Profile) => {
     const {fullName, cpf, wage, dependents, discount} = data;
     if(fullName !== '' && cpf !== '' && wage !== '' && dependents !== '' && discount !== '') {
