@@ -2,6 +2,7 @@ import { useHistory } from 'react-router-dom';
 // import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './styles.module.scss';
+import api from '../../services/api';
 
 type Profile = {
   fullName: string;
@@ -17,8 +18,11 @@ function FormsCreateEmployee() {
   const history = useHistory();
 
   const onSubmit = handleSubmit((data: Profile) => {
-    alert(JSON.stringify(data));
-    history.push('/');
+    const jsonData = JSON.stringify(data);
+
+    console.log(jsonData);
+    
+    // history.push('/');
   });
 
   return (
