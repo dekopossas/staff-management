@@ -2,23 +2,37 @@ import { useHistory } from 'react-router-dom';
 // import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './styles.module.scss';
+import api from '../../services/api';
 
 type Profile = {
   fullName: string;
   cpf: string;
-  wage: number;
+  wage: string;
   discount: string;
-  dependents: number;
+  dependents: string;
 };
 
 function FormsCreateEmployee() {
   const { register, handleSubmit } = useForm<Profile>();
-
+  
   const history = useHistory();
 
-  const onSubmit = handleSubmit((data: Profile) => {
-    alert(JSON.stringify(data));
-    history.push('/products');
+  const CREATED = 201;
+
+  // Preferiria fazer a validação separada com mais calma, esse trecho merece um refactor
+  const onSubmit = handleSubmit(async (data: Profile) => {
+    const {fullName, cpf, wage, dependents, discount} = data;
+    if(fullName !== '' && cpf !== '' && wage !== '' && dependents !== '' && discount !== '') {
+      const response = await api.post('/employees', data);
+  
+      if (response.status === CREATED) {
+        history.push('/');
+      } else {
+        alert('Erro ao cadastrar o usuário');
+      }
+    } else {
+      alert('Preencha todos os dados, Por favor.')
+    }
   });
 
   return (
@@ -43,7 +57,7 @@ function FormsCreateEmployee() {
           <label htmlFor="wage">Salário Bruto:</label>
           <input
             {...register('wage')}
-            type="number"
+            type="text"
             name="wage"
             id="wage"
             placeholder="Salário Bruto"
@@ -64,7 +78,7 @@ function FormsCreateEmployee() {
           <input
             {...register('dependents')}
             id="dependents"
-            type="number"
+            type="text"
             name="dependents"
             placeholder="Número de Dependentes"
           />
