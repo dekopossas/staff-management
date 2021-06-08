@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 
 interface employee {
+  id:number,
   nome: string,
   cpf: string,
   salario: number,
@@ -26,7 +27,7 @@ function EmployeeTable() {
   return (
     <div className={styles.container}>
       {
-        employees?.map(employee => <div>{employee.nome}</div>)
+        employees?.map(employee => <div key={employee.id}>{employee.nome}</div>)
       }
     </div>
   );
