@@ -22,7 +22,7 @@ function FormsCreateEmployee() {
 
     const response = await api.post('/employees', jsonData);
 
-    if (response.status === 200) {
+    if (response.status === 201) {
       history.push('/');
     } else {
       alert('Erro ao cadastrar o usuário');
