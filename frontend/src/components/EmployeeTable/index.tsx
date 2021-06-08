@@ -29,14 +29,29 @@ function EmployeeTable() {
     <div className={styles.container}>
         <h2>Listagem de Funcionários</h2>
         <table>
-          <tr>
-            <th>Nome</th>
-            <th>CPF</th>
-            <th>Salário</th>
-            <th>Desconto</th>
-            <th>Dependentes</th>
-            <th>Desconto IRPF</th>
-          </tr>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>CPF</th>
+              <th>Salário</th>
+              <th>Desconto</th>
+              <th>Dependentes</th>
+              <th>Desconto IRPF</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              employees?.map((employee) => (
+                <tr key={employee.id}>
+                  <td>{employee.fullName}</td>
+                  <td>{employee.cpf}</td>
+                  <td>{employee.wage}</td>
+                  <td>{employee.discount}</td>
+                  <td>{employee.dependents}</td>
+                </tr>
+              ))
+            }
+          </tbody>
         </table>
     </div>
   );
