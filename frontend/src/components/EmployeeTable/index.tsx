@@ -27,8 +27,8 @@ function EmployeeTable() {
 
   return (
     <div className={styles.container}>
-        <h2>Listagem de Funcionários</h2>
-        <table>
+        <h1>Listagem de Funcionários</h1>
+        <table className={styles.contentTable}>
           <thead>
             <tr>
               <th>Nome</th>
