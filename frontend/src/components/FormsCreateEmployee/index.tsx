@@ -17,12 +17,16 @@ function FormsCreateEmployee() {
 
   const history = useHistory();
 
-  const onSubmit = handleSubmit((data: Profile) => {
+  const onSubmit = handleSubmit(async (data: Profile) => {
     const jsonData = JSON.stringify(data);
 
-    console.log(jsonData);
-    
-    // history.push('/');
+    const response = await api.post('/create-employee', jsonData);
+
+    if (response.status === 200) {
+      history.push('/');
+    } else {
+      alert('Erro ao cadastrar o usuário');
+    }
   });
 
   return (
