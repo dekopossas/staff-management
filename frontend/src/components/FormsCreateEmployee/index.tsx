@@ -20,7 +20,7 @@ function FormsCreateEmployee() {
   const onSubmit = handleSubmit(async (data: Profile) => {
     const jsonData = JSON.stringify(data);
 
-    const response = await api.post('/create-employee', jsonData);
+    const response = await api.post('/employees', jsonData);
 
     if (response.status === 200) {
       history.push('/');
