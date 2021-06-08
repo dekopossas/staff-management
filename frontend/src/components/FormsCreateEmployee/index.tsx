@@ -18,7 +18,7 @@ function FormsCreateEmployee() {
 
   const onSubmit = handleSubmit((data: Profile) => {
     alert(JSON.stringify(data));
-    history.push('/products');
+    history.push('/');
   });
 
   return (
