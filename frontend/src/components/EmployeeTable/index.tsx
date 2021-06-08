@@ -26,9 +26,10 @@ function EmployeeTable() {
 
   return (
     <div className={styles.container}>
-      {
-        employees?.map(employee => <div key={employee.id}>{employee.fullName}</div>)
-      }
+        <h2>Listagem de Funcionários</h2>
+        {
+          employees?.map(employee => <div key={employee.id}>{employee.fullName}</div>)
+        }
     </div>
   );
 }
