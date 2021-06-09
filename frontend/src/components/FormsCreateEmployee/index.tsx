@@ -1,10 +1,9 @@
 import { useHistory, useParams } from 'react-router-dom';
-// import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './styles.module.scss';
 import api from '../../services/api';
 import { HTTP } from '../../util/constants';
-import { ChangeEvent, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type Profile = {
   fullName: string;
@@ -23,13 +22,6 @@ function FormsCreateEmployee() {
     discount: '',
     dependents: '',
   });
-
-  // function updateEmployee (e: ChangeEvent<HTMLInputElement>) {  ACREDITO QUE NÃO PRECISA DISSO
-  //   setEmployee({
-  //     ...employee,
-  //     [e.target.name]: e.target.value
-  //   })
-  // }
 
   const history = useHistory();
   const { id } = useParams<{ id: string }>();
@@ -53,13 +45,24 @@ function FormsCreateEmployee() {
   const onSubmit = handleSubmit(async (data: Profile) => {
     const { fullName, cpf, wage, dependents, discount } = data;
     if (fullName !== '' && cpf !== '' && wage !== '' && dependents !== '' && discount !== '') {
-      const response = await api.post('/employees', data);
+      if (id !== undefined) {
+        const response = await api.post('/employees', data);
 
-      if (response.status === HTTP.CREATED) {
-        history.push('/');
+        if (response.status === HTTP.CREATED) {
+          history.push('/');
+        } else {
+          alert('Erro ao cadastrar o usuário');
+        }
       } else {
-        alert('Erro ao cadastrar o usuário');
+        const response = await api.post('/employees', data);
+      
+        if (response.status === HTTP.CREATED) {
+          history.push('/');
+        } else {
+          alert('Erro ao cadastrar o usuário');
+        }
       }
+
     } else {
       alert('Preencha todos os dados, Por favor.');
     }
