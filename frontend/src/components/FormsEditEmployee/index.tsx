@@ -91,7 +91,7 @@ function FormsEditEmployee() {
         <div className={styles.halfBox}>
           <input
             type="submit"
-            value="registrar"
+            value="Salvar Alterações"
             id="btn-submit"
             // disabled={!(isEmailValid && isPasswordValid)}
           />
