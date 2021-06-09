@@ -23,15 +23,37 @@ function EmployeeTable() {
 
   const arrayDeVariaveisCalculadas = [];
 
-  const DEDUCAO = 164.56
+  const DEDUCAO_POR_DEPENDETE = 164.56
 
   const defineSalarioIR = (salario: number, dependentes: number, desconto:number) => {
-    const resultado = (salario - desconto - (dependentes * DEDUCAO))
+    const resultado = (salario - desconto - (dependentes * DEDUCAO_POR_DEPENDETE))
     return resultado
-  }
+  };
 
-  console.log(defineSalarioIR(5000, 1, 122));
-  
+  const VALOR_MINIMO_DE_ISENCAO = 1903.98
+  const VALOR_DA_ISENCAO = 0
+  const MINIMO_DE_SALARIO_PARA_SETE_E_MEIO_DE_TAXA = 2826.65
+  const 
+  const QUINZE_DE_TAXA_DE_ATE = 3751.05
+  const VINTE_E_DOIS_DE_ATE = 4664.68
+
+  const defineAliquita = (salario: number) => {
+    if (salario <= VALOR_MINIMO_DE_ISENCAO) {
+      return VALOR_DA_ISENCAO
+    }
+    if (salario <= ISENTO_DA_ALIQUOTA) {
+      return VALOR_DA_ISENCAO
+    }
+    if (salario <= ISENTO_DA_ALIQUOTA) {
+      return VALOR_DA_ISENCAO
+    }
+    if (salario <= ISENTO_DA_ALIQUOTA) {
+      return VALOR_DA_ISENCAO
+    }
+    if (salario <= ISENTO_DA_ALIQUOTA) {
+      return VALOR_DA_ISENCAO
+    }
+  }
 
   const calculaVariavel = () => {
     employees?.forEach((employee, index) => {
