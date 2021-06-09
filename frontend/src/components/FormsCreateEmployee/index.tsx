@@ -1,7 +1,7 @@
 import { useHistory, useParams } from 'react-router-dom';
 import styles from './styles.module.scss';
 import api from '../../services/api';
-// import { HTTP } from '../../util/constants';
+import { HTTP } from '../../util/constants';
 import { ChangeEvent, useEffect, useState } from 'react';
 
 type Profile = {
@@ -21,11 +21,11 @@ function FormsCreateEmployee() {
     dependents: '',
   });
 
-  function updateEmployee(e: ChangeEvent<HTMLInputElement>) {
+  function updateEmployee (e: ChangeEvent<HTMLInputElement>) {
     setEmployee({
       ...employee,
-      [e.target.name]: e.target.value,
-    });
+      [e.target.name]: e.target.value
+    })
   }
 
   const history = useHistory();
@@ -46,6 +46,34 @@ function FormsCreateEmployee() {
     history.goBack();
   };
 
+  // Preferiria fazer a validação separada com mais calma, esse trecho merece um refactor
+  const onSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const { fullName, cpf, wage, dependents, discount } = employee;
+    if (fullName !== '' && cpf !== '' && wage !== '' && dependents !== '' && discount !== '') {
+      if (id) {
+        const response = await api.put(`/employees/${id}`, employee);
+
+        if (response.status === HTTP.SUCCESS) {
+          history.push('/');
+        } else {
+          alert('Erro ao cadastrar o usuário');
+        }
+      } else {
+        const response = await api.post('/employees', employee);
+      
+        if (response.status === HTTP.CREATED) {
+          history.push('/');
+        } else {
+          alert('Erro ao cadastrar o usuário');
+        }
+      }
+
+    } else {
+      alert('Preencha todos os dados, Por favor.');
+    }
+  };
+
   useEffect(() => {
     if (id !== undefined) {
       findEmployee(id);
@@ -55,7 +83,7 @@ function FormsCreateEmployee() {
   return (
     <div className={styles.container}>
       {id ? <h1>Editando Funcionario</h1> : <h1>Cadastrando Funcionario</h1>}
-      <form className={styles.form}>
+      <form onSubmit={onSubmit} className={styles.form}>
         <div className={styles.fullBox}>
           <label htmlFor="fullName">Nome do Funcionário:</label>
           <input
@@ -120,7 +148,12 @@ function FormsCreateEmployee() {
           />
         </div>
         <div className={styles.fullBox}>
-          <input type="button" value="Voltar" id="btn-submit" onClick={backWindow} />
+          <input
+            type="button"
+            value="Voltar"
+            id="btn-submit"
+            onClick={backWindow}
+          />
         </div>
       </form>
     </div>
