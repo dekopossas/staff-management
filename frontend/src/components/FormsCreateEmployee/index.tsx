@@ -16,7 +16,7 @@ type Profile = {
 
 function FormsCreateEmployee() {
   const { register, handleSubmit } = useForm<Profile>();
-  const [ employee, setEmployee ] = useState<Profile>({
+  const [employee, setEmployee] = useState<Profile>({
     fullName: '',
     cpf: '',
     wage: '',
@@ -24,17 +24,17 @@ function FormsCreateEmployee() {
     dependents: '',
   });
 
-  function updateEmployee (e: ChangeEvent<HTMLInputElement>) {
-    setEmployee({
-      ...employee,
-      [e.target.name]: e.target.value
-    })
-  }
-  
-  const history = useHistory();
-  const { id } = useParams<{id: string}>();
+  // function updateEmployee (e: ChangeEvent<HTMLInputElement>) {  ACREDITO QUE NÃO PRECISA DISSO
+  //   setEmployee({
+  //     ...employee,
+  //     [e.target.name]: e.target.value
+  //   })
+  // }
 
-  const findEmployee = async(id: string) => {
+  const history = useHistory();
+  const { id } = useParams<{ id: string }>();
+
+  const findEmployee = async (id: string) => {
     const response = await api.get(`/employees/${id}`);
     setEmployee({
       fullName: response.data.fullName,
@@ -42,38 +42,38 @@ function FormsCreateEmployee() {
       wage: response.data.wage,
       discount: response.data.discount,
       dependents: response.data.dependents,
-    })
-  }
+    });
+  };
 
   const backWindow = () => {
-    history.goBack()
-  }
+    history.goBack();
+  };
 
   // Preferiria fazer a validação separada com mais calma, esse trecho merece um refactor
   const onSubmit = handleSubmit(async (data: Profile) => {
-    const {fullName, cpf, wage, dependents, discount} = data;
-    if(fullName !== '' && cpf !== '' && wage !== '' && dependents !== '' && discount !== '') {
+    const { fullName, cpf, wage, dependents, discount } = data;
+    if (fullName !== '' && cpf !== '' && wage !== '' && dependents !== '' && discount !== '') {
       const response = await api.post('/employees', data);
-  
+
       if (response.status === HTTP.CREATED) {
         history.push('/');
       } else {
         alert('Erro ao cadastrar o usuário');
       }
     } else {
-      alert('Preencha todos os dados, Por favor.')
+      alert('Preencha todos os dados, Por favor.');
     }
   });
 
   useEffect(() => {
-    if(id !== undefined) {
-      findEmployee(id)
+    if (id !== undefined) {
+      findEmployee(id);
     }
-  }, [id])
+  }, [id]);
 
   return (
     <div className={styles.container}>
-      <h1>Cadastrando Funcionario</h1>
+      {id ? <h1>Editando Funcionario</h1> : <h1>Cadastrando Funcionario</h1>}
       <form onSubmit={onSubmit} className={styles.form}>
         <div className={styles.fullBox}>
           <label htmlFor="fullName">Nome do Funcionário:</label>
@@ -133,9 +133,8 @@ function FormsCreateEmployee() {
         <div className={styles.fullBox}>
           <input
             type="submit"
-            value="registrar"
+            value={id ? 'Salvar Alterações' : 'Registrar'}
             id="btn-submit"
-            // disabled={!(isEmailValid && isPasswordValid)}
           />
         </div>
         <div className={styles.fullBox}>
@@ -144,7 +143,6 @@ function FormsCreateEmployee() {
             value="Voltar"
             id="btn-submit"
             onClick={backWindow}
-            // disabled={!(isEmailValid && isPasswordValid)}
           />
         </div>
       </form>
