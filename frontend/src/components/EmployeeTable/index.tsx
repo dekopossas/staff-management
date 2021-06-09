@@ -56,14 +56,6 @@ function EmployeeTable() {
     return salarioIR * TAXA_MAXIMA - PARCELA_MAXIMA;
   };
   
-  const arrayDeVariaveisCalculadas = [];
-  
-  const calculaVariavel = () => {
-    employees?.forEach((employee, index) => {
-
-    });
-  };
-
   useEffect(() => {
     loadData();
   }, []);
