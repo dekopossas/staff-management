@@ -47,6 +47,14 @@
       "discount": "120",
       "dependents": "1",
       "id": 6
+    },
+    {
+      "fullName": "Diana de Castro Possas",
+      "cpf": "108.667.886-97",
+      "wage": "3000",
+      "discount": "120",
+      "dependents": "1",
+      "id": 7
     }
   ]
 }
