@@ -20,10 +20,10 @@ function FormsCreateEmployee() {
   const history = useHistory();
   const { id } = useParams<{id: string}>();
 
-  // const findEmployee = async() => {
-  //   const response = api.get(`/employees/${params.id}`);
-  //   console.log(response);
-  // }
+  const findEmployee = async(id: string) => {
+    const response = await api.get(`/employees/${id}`);
+    console.log(response.data);
+  }
 
   const backWindow = () => {
     history.goBack()
@@ -31,6 +31,9 @@ function FormsCreateEmployee() {
 
   // Preferiria fazer a validação separada com mais calma, esse trecho merece um refactor
   const onSubmit = handleSubmit(async (data: Profile) => {
+    if(id !== undefined) {
+      findEmployee(id)
+    }
     const {fullName, cpf, wage, dependents, discount} = data;
     if(fullName !== '' && cpf !== '' && wage !== '' && dependents !== '' && discount !== '') {
       const response = await api.post('/employees', data);
@@ -46,7 +49,9 @@ function FormsCreateEmployee() {
   });
 
   useEffect(() => {
-    console.log(id)
+    if(id !== undefined) {
+      findEmployee(id)
+    }
   }, [id])
 
   return (
