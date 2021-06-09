@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
 import api from '../../services/api';
 import styles from './styles.module.scss';
+import { HTTP } from '../../util/constants';
 import * as func from '../../util/functions';
 
 interface employee {
@@ -26,6 +27,15 @@ function EmployeeTable() {
     return func.descontaAliquotaEIRPF(func.defineSalarioIR(employee)).toFixed(2);
   };
 
+  const deleteEmployee = async (id: number) => {
+    const response = await api.delete(`/employees/${id}`);
+    if (response.status === HTTP.CREATED){
+      document.location.reload(true)
+    } else {
+      alert('algo deu errado')
+    }
+  }
+
   useEffect(() => {
     loadData();
   }, []);
@@ -47,14 +57,17 @@ function EmployeeTable() {
         </thead>
         <tbody>
           {employees?.map((employee) => (
-            <tr key={employee.id}>
+            <tr id={(employee.id).toString()} key={employee.id}>
               <td className={styles.tdLeft}>{employee.fullName}</td>
               <td className={styles.tdLeft}>{employee.cpf}</td>
               <td className={styles.tdRight}>{`R$ ${parseInt(employee.wage).toFixed(2)}`}</td>
               <td className={styles.tdRight}>{`R$ ${parseInt(employee.discount).toFixed(2)}`}</td>
               <td>{employee.dependents}</td>
               <td className={styles.tdRight}>{`R$ ${employeeIRPF(employee)}`}</td>
-              <button>editar</button>/<button>deletar</button>
+              <td>
+                <button>editar</button>/
+                <button onClick={() => deleteEmployee(employee.id)}>deletar</button>
+              </td>
             </tr>
           ))}
         </tbody>
