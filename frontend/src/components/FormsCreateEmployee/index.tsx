@@ -50,7 +50,13 @@ function FormsCreateEmployee() {
         </div>
         <div className={styles.halfBox}>
           <label htmlFor="cpf">CPF:</label>
-          <input {...register('cpf')} type="text" name="cpf" id="cpf" placeholder="Digite o cpf" />
+          <input
+            {...register('cpf')}
+            type="number"
+            name="cpf"
+            id="cpf"
+            placeholder="Digite o cpf"
+          />
         </div>
         <div className={styles.halfBox}>
           <label htmlFor="wage">Salário Bruto:</label>
