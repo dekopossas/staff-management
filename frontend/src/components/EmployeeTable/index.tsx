@@ -35,16 +35,6 @@ function EmployeeTable() {
     return resultado_SALARIOIR;
   };
 
-  const VALOR_PARA_ISENCAO = 1903.98;
-  const VALOR_PARA_ALIQUOTA_MENOR_E_PARCELA_MENOR_DE_IRPF = 2826.65;
-  const VALOR_PARA_ALIQUOTA_MEDIA_E_PARCELA_MEDIA_DE_IRPF = 3751.05;
-  const VALOR_PARA_ALIQUOTA_GRANDE_E_PARCELA_GRANDE_DE_IRPF = 4664.68;
-  
-  const TAXA_ALIQUOTA_MENOR = 0.075;
-  const TAXA_ALIQUOTA_MEDIA = 0.15;
-  const TAXA_ALIQUOTA_GRANDE = 0.225;
-  const TAXA_MAXIMA = 0.275;
-  
   const PARCELA_MENOR_IRPF = 142.8;
   const PARCELA_MEDIA_DE_IRPF = 354.8;
   const PARCELA_GRANDE_DE_IRPF = 636.13;
@@ -54,13 +44,13 @@ function EmployeeTable() {
     if (salarioIR <= valorPara.ISENCAO) {
       return salarioIR;
     } else if (salarioIR <= valorPara.ALIQUOTA_MENOR_E_PARCELA_MENOR_DE_IRPF) {
-      return salarioIR * TAXA_ALIQUOTA_MENOR - PARCELA_MENOR_IRPF;
+      return salarioIR * taxa.ALIQUOTA_MENOR - PARCELA_MENOR_IRPF;
     } else if (salarioIR <= valorPara.ALIQUOTA_MEDIA_E_PARCELA_MEDIA_DE_IRPF) {
-      return salarioIR * TAXA_ALIQUOTA_MEDIA - PARCELA_MEDIA_DE_IRPF;
+      return salarioIR * taxa.ALIQUOTA_MEDIA - PARCELA_MEDIA_DE_IRPF;
     } else if (salarioIR <= valorPara.ALIQUOTA_GRANDE_E_PARCELA_GRANDE_DE_IRPF) {
-      return salarioIR * TAXA_ALIQUOTA_GRANDE - PARCELA_GRANDE_DE_IRPF;
+      return salarioIR * taxa.ALIQUOTA_GRANDE - PARCELA_GRANDE_DE_IRPF;
     }
-    return salarioIR * TAXA_MAXIMA - PARCELA_MAXIMA;
+    return salarioIR * taxa.MAXIMA - PARCELA_MAXIMA;
   };
 
   const employeeIRPF = (employee: employee) => {
