@@ -1,21 +1,21 @@
 // import React, { useEffect, useState } from "react";
-import FormsEmployee from "../../components/FormsEmployee";
+import FormsEditEmployee from "../../components/FormsEditEmployee";
 import Header from "../../components/Header";
 import NavSide from "../../components/NavSide";
 // import styles from './styles.module.scss';
 import './style.css';
 
 
-function CreateEmployee() {
+function EditEmployee() {
   return (
     <>
       <Header />
       <div className="container">
         <NavSide />
-        <FormsEmployee />
+        <FormsEditEmployee />
       </div>
     </>
   );
 }
 
-export default CreateEmployee;
+export default EditEmployee;
