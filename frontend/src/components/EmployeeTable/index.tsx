@@ -43,6 +43,7 @@ function EmployeeTable() {
             <th>Desconto</th>
             <th>Dependentes</th>
             <th>Desconto IRPF</th>
+            <th>Configurações</th>
           </tr>
         </thead>
         <tbody>
@@ -54,6 +55,7 @@ function EmployeeTable() {
               <td>{`R$${(parseInt(employee.discount)).toFixed(2)}`}</td>
               <td>{employee.dependents}</td>
               <td>{`R$${employeeIRPF(employee)}`}</td>
+              <button>editar</button>/<button>deletar</button>
             </tr>
           ))}
         </tbody>
