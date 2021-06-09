@@ -23,8 +23,9 @@ function EmployeeTable() {
 
   const DEDUCAO_POR_DEPENDETE = 164.56;
   
-  const defineSalarioIR = (salario: number, dependentes: number, desconto: number) => {
-    const resultado_SALARIOIR = salario - desconto - dependentes * DEDUCAO_POR_DEPENDETE;
+  const defineSalarioIR = (valoresParaCalculoDeTaxa: employee) => {
+    const{ wage, discount, dependents } = valoresParaCalculoDeTaxa
+    const resultado_SALARIOIR = parseInt(wage) - parseInt(discount) - parseInt(dependents) * DEDUCAO_POR_DEPENDETE;
     return resultado_SALARIOIR;
   };
   
@@ -75,14 +76,14 @@ function EmployeeTable() {
           </tr>
         </thead>
         <tbody>
-          {employees?.map((employee, index) => (
+          {employees?.map((employee) => (
             <tr key={employee.id}>
               <td>{employee.fullName}</td>
               <td>{employee.cpf}</td>
               <td>{parseInt(employee.wage)}</td>
               <td>{parseInt(employee.discount)}</td>
               <td>{parseInt(employee.dependents)}</td>
-              <td>variavelCalculada[index]</td>
+              <td>{descontaAliquotaEIRPF(defineSalarioIR(employee))}</td>
             </tr>
           ))}
         </tbody>
