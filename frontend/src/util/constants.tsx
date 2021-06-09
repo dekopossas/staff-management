@@ -21,9 +21,12 @@ const parcela = {
 
 const deducao = { POR_DEPENDETE: 164.56 }
 
+const HTTP = { CREATED: 201 }
+
 export {
   valorPara,
   taxa,
   parcela,
   deducao,
+  HTTP,
 }
