@@ -18,6 +18,10 @@ function FormsCreateEmployee() {
   
   const history = useHistory();
 
+  const backWindow = () => {
+    history.goBack()
+  }
+
   // Preferiria fazer a validação separada com mais calma, esse trecho merece um refactor
   const onSubmit = handleSubmit(async (data: Profile) => {
     const {fullName, cpf, wage, dependents, discount} = data;
@@ -101,7 +105,7 @@ function FormsCreateEmployee() {
             type="button"
             value="Voltar"
             id="btn-submit"
-            // onclick={}
+            onClick={backWindow}
             // disabled={!(isEmailValid && isPasswordValid)}
           />
         </div>
