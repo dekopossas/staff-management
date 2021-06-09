@@ -41,14 +41,14 @@ function EmployeeTable() {
           </thead>
           <tbody>
             {
-              employees?.map((employee) => (
+              employees?.map((employee, index) => (
                 <tr key={employee.id}>
                   <td>{employee.fullName}</td>
                   <td>{employee.cpf}</td>
                   <td>{parseInt(employee.wage)}</td>
                   <td>{parseInt(employee.discount)}</td>
                   <td>{parseInt(employee.dependents)}</td>
-                  <td>valor calculado</td>
+                  <td>variavelCalculada[index]</td>
                 </tr>
               ))
             }
