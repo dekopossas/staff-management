@@ -66,7 +66,7 @@ function EmployeeTable() {
               <td>{employee.dependents}</td>
               <td className={styles.tdRight}>{`R$ ${employeeIRPF(employee)}`}</td>
               <td>
-                <Link to="/create-employee">
+                <Link to="/edit-employee">
                   <button>editar</button>/
                 </Link>
                 <button onClick={() => deleteEmployee(employee.id)}>deletar</button>
