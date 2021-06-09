@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import styles from './styles.module.scss';
 import api from '../../services/api';
+import { HTTP } from '../../util/constants';
 
 type Profile = {
   fullName: string;
@@ -17,15 +18,13 @@ function FormsCreateEmployee() {
   
   const history = useHistory();
 
-  const CREATED = 201;
-
   // Preferiria fazer a validação separada com mais calma, esse trecho merece um refactor
   const onSubmit = handleSubmit(async (data: Profile) => {
     const {fullName, cpf, wage, dependents, discount} = data;
     if(fullName !== '' && cpf !== '' && wage !== '' && dependents !== '' && discount !== '') {
       const response = await api.post('/employees', data);
   
-      if (response.status === CREATED) {
+      if (response.status === HTTP.CREATED) {
         history.push('/');
       } else {
         alert('Erro ao cadastrar o usuário');

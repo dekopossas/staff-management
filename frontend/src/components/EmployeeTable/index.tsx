@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
+import api from '../../services/api';
 import styles from './styles.module.scss';
+import { HTTP } from '../../util/constants';
 import * as func from '../../util/functions';
 
 interface employee {
@@ -16,16 +18,24 @@ function EmployeeTable() {
   const [employees, setEmployees] = useState<[employee]>();
 
   async function loadData() {
-    const response = await fetch('http://localhost:3001/employees');
-    const data = await response.json();
+    const response = await api.get('/employees');
 
-    setEmployees(data);
-  }
+    setEmployees(response.data);
+  };
 
   const employeeIRPF = (employee: employee) => {
-    return func.descontaAliquotaEIRPF(func.defineSalarioIR(employee)).toFixed(2)
+    return func.descontaAliquotaEIRPF(func.defineSalarioIR(employee)).toFixed(2);
+  };
+
+  const deleteEmployee = async (id: number) => {
+    const response = await api.delete(`/employees/${id}`);
+    if (response.status === HTTP.CREATED){
+      document.location.reload(true)
+    } else {
+      alert('algo deu errado')
+    }
   }
-  
+
   useEffect(() => {
     loadData();
   }, []);
@@ -42,17 +52,22 @@ function EmployeeTable() {
             <th>Desconto</th>
             <th>Dependentes</th>
             <th>Desconto IRPF</th>
+            <th>Configurações</th>
           </tr>
         </thead>
         <tbody>
           {employees?.map((employee) => (
-            <tr key={employee.id}>
-              <td>{employee.fullName}</td>
-              <td>{employee.cpf}</td>
-              <td>{employee.wage}</td>
-              <td>{employee.discount}</td>
+            <tr id={(employee.id).toString()} key={employee.id}>
+              <td className={styles.tdLeft}>{employee.fullName}</td>
+              <td className={styles.tdLeft}>{employee.cpf}</td>
+              <td className={styles.tdRight}>{`R$ ${parseInt(employee.wage).toFixed(2)}`}</td>
+              <td className={styles.tdRight}>{`R$ ${parseInt(employee.discount).toFixed(2)}`}</td>
               <td>{employee.dependents}</td>
-              <td>{employeeIRPF(employee)}</td>
+              <td className={styles.tdRight}>{`R$ ${employeeIRPF(employee)}`}</td>
+              <td>
+                <button>editar</button>/
+                <button onClick={() => deleteEmployee(employee.id)}>deletar</button>
+              </td>
             </tr>
           ))}
         </tbody>
