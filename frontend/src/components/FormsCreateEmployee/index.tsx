@@ -88,11 +88,20 @@ function FormsCreateEmployee() {
             placeholder="Número de Dependentes"
           />
         </div>
-        <div className={styles.halfBox}>
+        <div className={styles.fullBox}>
           <input
             type="submit"
             value="registrar"
             id="btn-submit"
+            // disabled={!(isEmailValid && isPasswordValid)}
+          />
+        </div>
+        <div className={styles.fullBox}>
+          <input
+            type="button"
+            value="Voltar"
+            id="btn-submit"
+            // onclick={}
             // disabled={!(isEmailValid && isPasswordValid)}
           />
         </div>
