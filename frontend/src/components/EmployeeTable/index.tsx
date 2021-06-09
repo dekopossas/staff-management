@@ -1,12 +1,7 @@
 import { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
-import {
-  valorPara,
-  taxa,
-  parcela,
-  deducao,
-} from '../../util/constants';
+import * as func from '../../util/functions';
 
 interface employee {
   id: number;
@@ -27,32 +22,8 @@ function EmployeeTable() {
     setEmployees(data);
   }
 
-  const defineSalarioIR = (valoresParaCalculoDeTaxa: employee) => {
-    const{ wage, discount, dependents } = valoresParaCalculoDeTaxa
-    const salario = parseInt(wage)
-    const desconto = parseFloat(discount)
-    const dependentes = parseInt(dependents) * deducao.POR_DEPENDETE
-    
-    const resultado_SALARIOIR = salario - desconto - dependentes;
-    
-    return resultado_SALARIOIR;
-  };
-
-  const descontaAliquotaEIRPF = (salarioIR: number) => {
-    if (salarioIR <= valorPara.ISENCAO) {
-      return salarioIR;
-    } else if (salarioIR <= valorPara.ALIQUOTA_MENOR_E_PARCELA_MENOR_DE_IRPF) {
-      return salarioIR * taxa.ALIQUOTA_MENOR - parcela.MENOR_IRPF;
-    } else if (salarioIR <= valorPara.ALIQUOTA_MEDIA_E_PARCELA_MEDIA_DE_IRPF) {
-      return salarioIR * taxa.ALIQUOTA_MEDIA - parcela.MEDIA_DE_IRPF;
-    } else if (salarioIR <= valorPara.ALIQUOTA_GRANDE_E_PARCELA_GRANDE_DE_IRPF) {
-      return salarioIR * taxa.ALIQUOTA_GRANDE - parcela.GRANDE_DE_IRPF;
-    }
-    return salarioIR * taxa.MAXIMA - parcela.MAXIMA;
-  };
-
   const employeeIRPF = (employee: employee) => {
-    return descontaAliquotaEIRPF(defineSalarioIR(employee)).toFixed(2)
+    return func.descontaAliquotaEIRPF(func.defineSalarioIR(employee)).toFixed(2)
   }
   
   useEffect(() => {
