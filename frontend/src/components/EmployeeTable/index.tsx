@@ -48,13 +48,14 @@ function EmployeeTable() {
         <tbody>
           {employees?.map((employee) => (
             <tr key={employee.id}>
-              <td>{employee.fullName}</td>
-              <td>{employee.cpf}</td>
-              <td>{`R$${(parseInt(employee.wage)).toFixed(2)}`}</td>
-              <td>{`R$${(parseInt(employee.discount)).toFixed(2)}`}</td>
+              <td className={styles.tdLeft}>{employee.fullName}</td>
+              <td className={styles.tdLeft}>{employee.cpf}</td>
+              <td className={styles.tdRight}>{`R$ ${(parseInt(employee.wage)).toFixed(2)}`}</td>
+              <td className={styles.tdRight}>{`R$ ${(parseInt(employee.discount)).toFixed(2)}`}</td>
               <td>{employee.dependents}</td>
-              <td>{`R$${employeeIRPF(employee)}`}</td>
-              <button>editar</button>/<button>deletar</button>
+              <td className={styles.tdRight}>{`R$ ${employeeIRPF(employee)}`}</td>
+              <button>editar</button>/
+              <button>deletar</button>
             </tr>
           ))}
         </tbody>
