@@ -32,8 +32,8 @@ function EmployeeTable() {
 
   const VALOR_MINIMO_DE_ISENCAO = 1903.98
   const VALOR_DA_ISENCAO = 0
-  const MINIMO_DE_SALARIO_PARA_SETE_E_MEIO_DE_TAXA = 2826.65
-  const 
+  const VALOR_PARA_SETE_E_MEIO_DE_TAXA = 2826.65
+  const SETE_E_MEIO_DE_TAXA = 7.5/100
   const QUINZE_DE_TAXA_DE_ATE = 3751.05
   const VINTE_E_DOIS_DE_ATE = 4664.68
 
@@ -41,17 +41,11 @@ function EmployeeTable() {
     if (salario <= VALOR_MINIMO_DE_ISENCAO) {
       return VALOR_DA_ISENCAO
     }
-    if (salario <= ISENTO_DA_ALIQUOTA) {
-      return VALOR_DA_ISENCAO
+    if (salario > VALOR_MINIMO_DE_ISENCAO && salario <= VALOR_PARA_SETE_E_MEIO_DE_TAXA) {
+      return SETE_E_MEIO_DE_TAXA
     }
-    if (salario <= ISENTO_DA_ALIQUOTA) {
-      return VALOR_DA_ISENCAO
-    }
-    if (salario <= ISENTO_DA_ALIQUOTA) {
-      return VALOR_DA_ISENCAO
-    }
-    if (salario <= ISENTO_DA_ALIQUOTA) {
-      return VALOR_DA_ISENCAO
+    if (salario > VALOR_MINIMO_DE_ISENCAO && salario <= VALOR_PARA_SETE_E_MEIO_DE_TAXA) {
+      return SETE_E_MEIO_DE_TAXA
     }
   }
 
