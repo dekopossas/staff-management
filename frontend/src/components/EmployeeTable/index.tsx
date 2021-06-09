@@ -30,31 +30,33 @@ function EmployeeTable() {
     return resultado_SALARIOIR
   };
 
-  const VALOR_MAXIMO_PARA_ISENCAO = 1903.98
-  const TAXA_DE_ISENTOS = 0
-  const VALOR_MAXIMO_PARA_7_E_MEIO_E_MENOR_PARCELA_DE_IRPF = 2826.65
-  const TAXA_DE_7_E_MEIO = 7.5/100
-  const MENOR_PARCELA_IRPF = 142.80
-  const VALOR_MAXIMO_PARA_15 = 3751.05
-  const TAXA_DE_15 = 15/100
-  const VALOR_MAXIMO_PARA_22_MEIO = 4664.68
-  const TAXA_DE_22_E_MEIO = 22.5/100
-  const TAXA_MAXIMA = 27.5/100
+  const VALOR_PARA_ISENCAO = 1903.98
+  const VALOR_PARA_ALIQUOTA_MENOR_E_PARCELA_MENOR_DE_IRPF = 2826.65
+  const VALOR_PARA_ALIQUOTA_MEDIA_E_PARCELA_MEDIA_DE_IRPF = 3751.05
+  const VALOR_PARA_ALIQUOTA_GRANDE_E_PARCELA_GRANDE_DE_IRPF = 4664.68
+  
+  const TAXA_ALIQUOTA_MENOR = 0.075
+  const TAXA_ALIQUOTA_MEDIA = 0.15
+  const TAXA_ALIQUOTA_GRANDE = 0.225
+  const TAXA_MAXIMA = 0.275
+  
+  const PARCELA_MENOR_IRPF = 142.80
+  const PARCELA_MEDIA_DE_IRPF = 354.80
+  const PARCELA_GRANDE_DE_IRPF = 636.13
+  const PARCELA_MAXIMA = 869.36
 
-  const VALOR_INICIAL_DE_RESULTADO_FINAL = 0
 
-  const defineAliquitaEparcerlaIRPF = (salarioIR: number) => {
-    const resultado_FINAL = VALOR_INICIAL_DE_RESULTADO_FINAL
-    if (salarioIR <= VALOR_MAXIMO_PARA_ISENCAO) {
-      return 
-    } else if (salarioIR <= VALOR_MAXIMO_PARA_7_E_MEIO_E_MENOR_PARCELA_DE_IRPF) {
-      return TAXA_DE_7_E_MEIO
-    } else if (salarioIR <= VALOR_MAXIMO_PARA_15) {
-      return TAXA_DE_15
-    } else if (salarioIR <= VALOR_MAXIMO_PARA_22_MEIO) {
-      return TAXA_DE_22_E_MEIO
+  const descontaAliquotaEIRPF = (salarioIR: number) => {
+    if (salarioIR <= VALOR_PARA_ISENCAO) {
+      return salarioIR
+    } else if (salarioIR <= VALOR_PARA_ALIQUOTA_MENOR_E_PARCELA_MENOR_DE_IRPF) {
+      return (salarioIR * TAXA_ALIQUOTA_MENOR) - PARCELA_MENOR_IRPF
+    } else if (salarioIR <= VALOR_PARA_ALIQUOTA_MEDIA_E_PARCELA_MEDIA_DE_IRPF) {
+      return (salarioIR * TAXA_ALIQUOTA_MEDIA) - PARCELA_MEDIA_DE_IRPF
+    } else if (salarioIR <= VALOR_PARA_ALIQUOTA_GRANDE_E_PARCELA_GRANDE_DE_IRPF) {
+      return (salarioIR * TAXA_ALIQUOTA_GRANDE) - PARCELA_GRANDE_DE_IRPF
     }
-    return TAXA_MAXIMA
+    return (salarioIR * TAXA_MAXIMA) - PARCELA_MAXIMA
   }
 
   const calculaVariavel = () => {
