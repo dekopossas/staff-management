@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
-import { valorPara, taxa, parcela } from '../../util/constants';
+import {
+  valorPara,
+  taxa,
+  parcela,
+  deducao,
+} from '../../util/constants';
 
 interface employee {
   id: number;
@@ -22,35 +27,28 @@ function EmployeeTable() {
     setEmployees(data);
   }
 
-  const DEDUCAO_POR_DEPENDETE = 164.56;
-  
   const defineSalarioIR = (valoresParaCalculoDeTaxa: employee) => {
     const{ wage, discount, dependents } = valoresParaCalculoDeTaxa
     const salario = parseInt(wage)
     const desconto = parseFloat(discount)
-    const dependentes = parseInt(dependents) * DEDUCAO_POR_DEPENDETE
+    const dependentes = parseInt(dependents) * deducao.POR_DEPENDETE
     
     const resultado_SALARIOIR = salario - desconto - dependentes;
     
     return resultado_SALARIOIR;
   };
 
-  const PARCELA_MENOR_IRPF = 142.8;
-  const PARCELA_MEDIA_DE_IRPF = 354.8;
-  const PARCELA_GRANDE_DE_IRPF = 636.13;
-  const PARCELA_MAXIMA = 869.36;
-  
   const descontaAliquotaEIRPF = (salarioIR: number) => {
     if (salarioIR <= valorPara.ISENCAO) {
       return salarioIR;
     } else if (salarioIR <= valorPara.ALIQUOTA_MENOR_E_PARCELA_MENOR_DE_IRPF) {
-      return salarioIR * taxa.ALIQUOTA_MENOR - PARCELA_MENOR_IRPF;
+      return salarioIR * taxa.ALIQUOTA_MENOR - parcela.MENOR_IRPF;
     } else if (salarioIR <= valorPara.ALIQUOTA_MEDIA_E_PARCELA_MEDIA_DE_IRPF) {
-      return salarioIR * taxa.ALIQUOTA_MEDIA - PARCELA_MEDIA_DE_IRPF;
+      return salarioIR * taxa.ALIQUOTA_MEDIA - parcela.MEDIA_DE_IRPF;
     } else if (salarioIR <= valorPara.ALIQUOTA_GRANDE_E_PARCELA_GRANDE_DE_IRPF) {
-      return salarioIR * taxa.ALIQUOTA_GRANDE - PARCELA_GRANDE_DE_IRPF;
+      return salarioIR * taxa.ALIQUOTA_GRANDE - parcela.GRANDE_DE_IRPF;
     }
-    return salarioIR * taxa.MAXIMA - PARCELA_MAXIMA;
+    return salarioIR * taxa.MAXIMA - parcela.MAXIMA;
   };
 
   const employeeIRPF = (employee: employee) => {
