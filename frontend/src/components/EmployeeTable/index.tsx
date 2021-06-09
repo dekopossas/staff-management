@@ -40,11 +40,7 @@ function EmployeeTable() {
   const defineAliquita = (salario: number) => {
     if (salario <= VALOR_MINIMO_DE_ISENCAO) {
       return VALOR_DA_ISENCAO
-    }
-    if (salario > VALOR_MINIMO_DE_ISENCAO && salario <= VALOR_PARA_SETE_E_MEIO_DE_TAXA) {
-      return SETE_E_MEIO_DE_TAXA
-    }
-    if (salario > VALOR_MINIMO_DE_ISENCAO && salario <= VALOR_PARA_SETE_E_MEIO_DE_TAXA) {
+    } else if (salario <= VALOR_PARA_SETE_E_MEIO_DE_TAXA) {
       return SETE_E_MEIO_DE_TAXA
     }
   }
