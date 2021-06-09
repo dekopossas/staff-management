@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 // import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './styles.module.scss';
@@ -17,6 +17,7 @@ function FormsCreateEmployee() {
   const { register, handleSubmit } = useForm<Profile>();
   
   const history = useHistory();
+  const params = useParams();
 
   const backWindow = () => {
     history.goBack()
