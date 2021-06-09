@@ -21,30 +21,28 @@ function EmployeeTable() {
     setEmployees(data);
   }
 
-  const arrayDeVariaveisCalculadas = [];
-
   const DEDUCAO_POR_DEPENDETE = 164.56;
-
+  
   const defineSalarioIR = (salario: number, dependentes: number, desconto: number) => {
     const resultado_SALARIOIR = salario - desconto - dependentes * DEDUCAO_POR_DEPENDETE;
     return resultado_SALARIOIR;
   };
-
+  
   const VALOR_PARA_ISENCAO = 1903.98;
   const VALOR_PARA_ALIQUOTA_MENOR_E_PARCELA_MENOR_DE_IRPF = 2826.65;
   const VALOR_PARA_ALIQUOTA_MEDIA_E_PARCELA_MEDIA_DE_IRPF = 3751.05;
   const VALOR_PARA_ALIQUOTA_GRANDE_E_PARCELA_GRANDE_DE_IRPF = 4664.68;
-
+  
   const TAXA_ALIQUOTA_MENOR = 0.075;
   const TAXA_ALIQUOTA_MEDIA = 0.15;
   const TAXA_ALIQUOTA_GRANDE = 0.225;
   const TAXA_MAXIMA = 0.275;
-
+  
   const PARCELA_MENOR_IRPF = 142.8;
   const PARCELA_MEDIA_DE_IRPF = 354.8;
   const PARCELA_GRANDE_DE_IRPF = 636.13;
   const PARCELA_MAXIMA = 869.36;
-
+  
   const descontaAliquotaEIRPF = (salarioIR: number) => {
     if (salarioIR <= VALOR_PARA_ISENCAO) {
       return salarioIR;
@@ -57,11 +55,13 @@ function EmployeeTable() {
     }
     return salarioIR * TAXA_MAXIMA - PARCELA_MAXIMA;
   };
-
-  console.log(descontaAliquotaEIRPF(8628.66));
-
+  
+  const arrayDeVariaveisCalculadas = [];
+  
   const calculaVariavel = () => {
-    employees?.forEach((employee, index) => {});
+    employees?.forEach((employee, index) => {
+
+    });
   };
 
   useEffect(() => {
