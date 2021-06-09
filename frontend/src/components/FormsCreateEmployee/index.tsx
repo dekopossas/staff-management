@@ -21,6 +21,9 @@ function FormsCreateEmployee() {
   // Preferiria fazer a validação separada com mais calma, esse trecho merece um refactor
   const onSubmit = handleSubmit(async (data: Profile) => {
     const {fullName, cpf, wage, dependents, discount} = data;
+    const ary = cpf.split('')
+    console.log(ary);
+    
     if(fullName !== '' && cpf !== '' && wage !== '' && dependents !== '' && discount !== '') {
       const response = await api.post('/employees', data);
   
@@ -50,7 +53,7 @@ function FormsCreateEmployee() {
         </div>
         <div className={styles.halfBox}>
           <label htmlFor="cpf">CPF:</label>
-          <input {...register('cpf')} type="text" name="cpf" id="cpf" placeholder="Digite o cpf" />
+          <input {...register('cpf')} type="number" name="cpf" id="cpf" placeholder="Digite o cpf" />
         </div>
         <div className={styles.halfBox}>
           <label htmlFor="wage">Salário Bruto:</label>
