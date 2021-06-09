@@ -23,7 +23,8 @@ function EmployeeTable() {
   }
 
   const employeeIRPF = (employee: employee) => {
-    return func.descontaAliquotaEIRPF(func.defineSalarioIR(employee)).toFixed(2)
+    return func.descontaAliquotaEIRPF(func.defineSalarioIR(employee))
+      .toFixed(2)
   }
   
   useEffect(() => {
@@ -49,10 +50,10 @@ function EmployeeTable() {
             <tr key={employee.id}>
               <td>{employee.fullName}</td>
               <td>{employee.cpf}</td>
-              <td>{employee.wage}</td>
-              <td>{employee.discount}</td>
+              <td>{`R$${(parseInt(employee.wage)).toFixed(2)}`}</td>
+              <td>{`R$${(parseInt(employee.discount)).toFixed(2)}`}</td>
               <td>{employee.dependents}</td>
-              <td>{employeeIRPF(employee)}</td>
+              <td>{`R$${employeeIRPF(employee)}`}</td>
             </tr>
           ))}
         </tbody>
