@@ -47,6 +47,14 @@
       "discount": "270",
       "dependents": "3",
       "id": 6
+    },
+    {
+      "fullName": "Diana de Castro",
+      "cpf": "1000000009",
+      "wage": "3008",
+      "discount": "278",
+      "dependents": "8",
+      "id": 7
     }
   ]
 }
