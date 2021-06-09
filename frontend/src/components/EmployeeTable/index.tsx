@@ -29,9 +29,6 @@ function EmployeeTable() {
     return resultado_SALARIOIR;
   };
 
-  // console.log(defineSalarioIR("998", "74.85", "2"));
-  
-  
   const VALOR_PARA_ISENCAO = 1903.98;
   const VALOR_PARA_ALIQUOTA_MENOR_E_PARCELA_MENOR_DE_IRPF = 2826.65;
   const VALOR_PARA_ALIQUOTA_MEDIA_E_PARCELA_MEDIA_DE_IRPF = 3751.05;
@@ -86,7 +83,7 @@ function EmployeeTable() {
               <td>{employee.wage}</td>
               <td>{employee.discount}</td>
               <td>{employee.dependents}</td>
-              <td>{descontaAliquotaEIRPF(defineSalarioIR(employee))}</td>
+              <td>{}</td>
             </tr>
           ))}
         </tbody>
