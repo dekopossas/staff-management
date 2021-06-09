@@ -28,24 +28,11 @@ function EmployeeTable() {
     const salario = parseInt(wage)
     const desconto = parseFloat(discount)
     const dependentes = parseInt(dependents) * DEDUCAO_POR_DEPENDETE
-    console.log(salario, desconto, dependentes);
     
     const resultado_SALARIOIR = salario - desconto - dependentes;
     
     return resultado_SALARIOIR;
   };
-
-  const leticia = {
-    "id": 2,
-    "fullName": "Edson Thiago Drumond",
-    "cpf": "748.517.476-24",
-    "wage": "1045",
-    "discount": "78.38",
-    "dependents": "1"
-  };
-
-  console.log(defineSalarioIR(leticia));
-  
 
   const VALOR_PARA_ISENCAO = 1903.98;
   const VALOR_PARA_ALIQUOTA_MENOR_E_PARCELA_MENOR_DE_IRPF = 2826.65;
@@ -74,6 +61,10 @@ function EmployeeTable() {
     }
     return salarioIR * TAXA_MAXIMA - PARCELA_MAXIMA;
   };
+
+  const employeeIRPF = (employee: employee) => {
+    return descontaAliquotaEIRPF(defineSalarioIR(employee)).toFixed(2)
+  }
   
   useEffect(() => {
     loadData();
@@ -101,7 +92,7 @@ function EmployeeTable() {
               <td>{employee.wage}</td>
               <td>{employee.discount}</td>
               <td>{employee.dependents}</td>
-              <td>{descontaAliquotaEIRPF(defineSalarioIR(employee)).toFixed(2)}</td>
+              <td>{employeeIRPF(employee)}</td>
             </tr>
           ))}
         </tbody>
