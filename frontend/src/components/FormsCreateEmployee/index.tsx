@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import styles from './styles.module.scss';
 import api from '../../services/api';
 import { HTTP } from '../../util/constants';
+import { useEffect } from 'react';
 
 type Profile = {
   fullName: string;
@@ -17,7 +18,12 @@ function FormsCreateEmployee() {
   const { register, handleSubmit } = useForm<Profile>();
   
   const history = useHistory();
-  const { id } = useParams();
+  const { id } = useParams<{id: string}>();
+
+  // const findEmployee = async() => {
+  //   const response = api.get(`/employees/${params.id}`);
+  //   console.log(response);
+  // }
 
   const backWindow = () => {
     history.goBack()
@@ -38,6 +44,10 @@ function FormsCreateEmployee() {
       alert('Preencha todos os dados, Por favor.')
     }
   });
+
+  useEffect(() => {
+    console.log(id)
+  }, [id])
 
   return (
     <div className={styles.container}>
