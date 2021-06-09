@@ -36,7 +36,13 @@ function FormsCreateEmployee() {
 
   const findEmployee = async(id: string) => {
     const response = await api.get(`/employees/${id}`);
-    console.log(response.data);
+    setEmployee({
+      fullName: response.data.fullName,
+      cpf: response.data.cpf,
+      wage: response.data.wage,
+      discount: response.data.discount,
+      dependents: response.data.dependents,
+    })
   }
 
   const backWindow = () => {
@@ -73,6 +79,7 @@ function FormsCreateEmployee() {
           <label htmlFor="fullName">Nome do Funcionário:</label>
           <input
             {...register('fullName')}
+            value={employee.fullName}
             type="text"
             name="fullName"
             id="fullName"
@@ -83,6 +90,7 @@ function FormsCreateEmployee() {
           <label htmlFor="cpf">CPF:</label>
           <input
             {...register('cpf')}
+            value={employee.cpf}
             type="number"
             name="cpf"
             id="cpf"
@@ -93,6 +101,7 @@ function FormsCreateEmployee() {
           <label htmlFor="wage">Salário Bruto:</label>
           <input
             {...register('wage')}
+            value={employee.wage}
             type="text"
             name="wage"
             id="wage"
@@ -103,6 +112,7 @@ function FormsCreateEmployee() {
           <label htmlFor="discount">Desconto na Previdência:</label>
           <input
             {...register('discount')}
+            value={employee.discount}
             id="discount"
             type="text"
             name="discount"
@@ -113,6 +123,7 @@ function FormsCreateEmployee() {
           <label htmlFor="dependents">Número de Dependentes:</label>
           <input
             {...register('dependents')}
+            value={employee.dependents}
             id="dependents"
             type="text"
             name="dependents"
