@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import styles from './styles.module.scss';
 import api from '../../services/api';
 import { HTTP } from '../../util/constants';
-import { useEffect } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 
 type Profile = {
   fullName: string;
@@ -16,6 +16,20 @@ type Profile = {
 
 function FormsCreateEmployee() {
   const { register, handleSubmit } = useForm<Profile>();
+  const [ model, setModel ] = useState<Profile>({
+    fullName: '',
+    cpf: '',
+    wage: '',
+    discount: '',
+    dependents: '',
+  });
+
+  function updateModel (e: ChangeEvent<HTMLInputElement>) {
+    setModel({
+      ...model,
+      [e.target.name]: e.target.value
+    })
+  }
   
   const history = useHistory();
   const { id } = useParams<{id: string}>();
