@@ -1,5 +1,5 @@
 // import React, { useEffect, useState } from "react";
-import FormsCreateEmployee from "../../components/FormsCreateEmployee";
+import FormsEmployee from "../../components/FormsEmployee";
 import Header from "../../components/Header";
 import NavSide from "../../components/NavSide";
 // import styles from './styles.module.scss';
@@ -12,7 +12,7 @@ function CreateEmployee() {
       <Header />
       <div className="container">
         <NavSide />
-        <FormsCreateEmployee />
+        <FormsEmployee />
       </div>
     </>
   );

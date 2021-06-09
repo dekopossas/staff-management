@@ -47,14 +47,6 @@
       "discount": "270",
       "dependents": "3",
       "id": 6
-    },
-    {
-      "fullName": "André de Castro",
-      "cpf": "10866788697",
-      "wage": "4500",
-      "discount": "300",
-      "dependents": "16",
-      "id": 7
     }
   ]
 }

@@ -12,7 +12,7 @@ type Profile = {
   dependents: string;
 };
 
-function FormsCreateEmployee() {
+function FormsEmployee() {
   const [employee, setEmployee] = useState<Profile>({
     fullName: '',
     cpf: '',
@@ -160,4 +160,4 @@ function FormsCreateEmployee() {
   );
 }
 
-export default FormsCreateEmployee;
+export default FormsEmployee;
