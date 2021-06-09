@@ -26,23 +26,35 @@ function EmployeeTable() {
   const DEDUCAO_POR_DEPENDETE = 164.56
 
   const defineSalarioIR = (salario: number, dependentes: number, desconto:number) => {
-    const resultado = (salario - desconto - (dependentes * DEDUCAO_POR_DEPENDETE))
-    return resultado
+    const resultado_SALARIOIR = (salario - desconto - (dependentes * DEDUCAO_POR_DEPENDETE))
+    return resultado_SALARIOIR
   };
 
-  const VALOR_MINIMO_DE_ISENCAO = 1903.98
-  const VALOR_DA_ISENCAO = 0
-  const VALOR_PARA_SETE_E_MEIO_DE_TAXA = 2826.65
-  const SETE_E_MEIO_DE_TAXA = 7.5/100
-  const QUINZE_DE_TAXA_DE_ATE = 3751.05
-  const VINTE_E_DOIS_DE_ATE = 4664.68
+  const VALOR_MAXIMO_PARA_ISENCAO = 1903.98
+  const TAXA_DE_ISENTOS = 0
+  const VALOR_MAXIMO_PARA_7_E_MEIO_E_MENOR_PARCELA_DE_IRPF = 2826.65
+  const TAXA_DE_7_E_MEIO = 7.5/100
+  const MENOR_PARCELA_IRPF = 142.80
+  const VALOR_MAXIMO_PARA_15 = 3751.05
+  const TAXA_DE_15 = 15/100
+  const VALOR_MAXIMO_PARA_22_MEIO = 4664.68
+  const TAXA_DE_22_E_MEIO = 22.5/100
+  const TAXA_MAXIMA = 27.5/100
 
-  const defineAliquita = (salario: number) => {
-    if (salario <= VALOR_MINIMO_DE_ISENCAO) {
-      return VALOR_DA_ISENCAO
-    } else if (salario <= VALOR_PARA_SETE_E_MEIO_DE_TAXA) {
-      return SETE_E_MEIO_DE_TAXA
+  const VALOR_INICIAL_DE_RESULTADO_FINAL = 0
+
+  const defineAliquitaEparcerlaIRPF = (salarioIR: number) => {
+    const resultado_FINAL = VALOR_INICIAL_DE_RESULTADO_FINAL
+    if (salarioIR <= VALOR_MAXIMO_PARA_ISENCAO) {
+      return 
+    } else if (salarioIR <= VALOR_MAXIMO_PARA_7_E_MEIO_E_MENOR_PARCELA_DE_IRPF) {
+      return TAXA_DE_7_E_MEIO
+    } else if (salarioIR <= VALOR_MAXIMO_PARA_15) {
+      return TAXA_DE_15
+    } else if (salarioIR <= VALOR_MAXIMO_PARA_22_MEIO) {
+      return TAXA_DE_22_E_MEIO
     }
+    return TAXA_MAXIMA
   }
 
   const calculaVariavel = () => {
