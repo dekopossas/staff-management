@@ -23,8 +23,7 @@ function EmployeeTable() {
   }
 
   const employeeIRPF = (employee: employee) => {
-    return func.descontaAliquotaEIRPF(func.defineSalarioIR(employee))
-      .toFixed(2)
+    return func.descontaAliquotaEIRPF(func.defineSalarioIR(employee)).toFixed(2)
   }
   
   useEffect(() => {
