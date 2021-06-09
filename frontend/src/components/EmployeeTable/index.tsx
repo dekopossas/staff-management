@@ -25,9 +25,12 @@ function EmployeeTable() {
   
   const defineSalarioIR = (valoresParaCalculoDeTaxa: employee) => {
     const{ wage, discount, dependents } = valoresParaCalculoDeTaxa
-    const resultado_SALARIOIR = parseInt(wage) - parseInt(discount) - parseInt(dependents) * DEDUCAO_POR_DEPENDETE;
+    const resultado_SALARIOIR = parseInt(wage) - parseInt(discount) - (parseInt(dependents) * DEDUCAO_POR_DEPENDETE);
     return resultado_SALARIOIR;
   };
+
+  // console.log(defineSalarioIR("998", "74.85", "2"));
+  
   
   const VALOR_PARA_ISENCAO = 1903.98;
   const VALOR_PARA_ALIQUOTA_MENOR_E_PARCELA_MENOR_DE_IRPF = 2826.65;
@@ -80,9 +83,9 @@ function EmployeeTable() {
             <tr key={employee.id}>
               <td>{employee.fullName}</td>
               <td>{employee.cpf}</td>
-              <td>{parseInt(employee.wage)}</td>
-              <td>{parseInt(employee.discount)}</td>
-              <td>{parseInt(employee.dependents)}</td>
+              <td>{employee.wage}</td>
+              <td>{employee.discount}</td>
+              <td>{employee.dependents}</td>
               <td>{descontaAliquotaEIRPF(defineSalarioIR(employee))}</td>
             </tr>
           ))}
