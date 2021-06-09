@@ -58,6 +58,8 @@ function EmployeeTable() {
     return salarioIR * TAXA_MAXIMA - PARCELA_MAXIMA;
   };
 
+  console.log(descontaAliquotaEIRPF(8628.66));
+
   const calculaVariavel = () => {
     employees?.forEach((employee, index) => {});
   };
