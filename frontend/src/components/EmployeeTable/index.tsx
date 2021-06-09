@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
+import { valorPara, taxa, parcela } from '../../util/constants';
 
 interface employee {
   id: number;
@@ -50,13 +51,13 @@ function EmployeeTable() {
   const PARCELA_MAXIMA = 869.36;
   
   const descontaAliquotaEIRPF = (salarioIR: number) => {
-    if (salarioIR <= VALOR_PARA_ISENCAO) {
+    if (salarioIR <= valorPara.ISENCAO) {
       return salarioIR;
-    } else if (salarioIR <= VALOR_PARA_ALIQUOTA_MENOR_E_PARCELA_MENOR_DE_IRPF) {
+    } else if (salarioIR <= valorPara.ALIQUOTA_MENOR_E_PARCELA_MENOR_DE_IRPF) {
       return salarioIR * TAXA_ALIQUOTA_MENOR - PARCELA_MENOR_IRPF;
-    } else if (salarioIR <= VALOR_PARA_ALIQUOTA_MEDIA_E_PARCELA_MEDIA_DE_IRPF) {
+    } else if (salarioIR <= valorPara.ALIQUOTA_MEDIA_E_PARCELA_MEDIA_DE_IRPF) {
       return salarioIR * TAXA_ALIQUOTA_MEDIA - PARCELA_MEDIA_DE_IRPF;
-    } else if (salarioIR <= VALOR_PARA_ALIQUOTA_GRANDE_E_PARCELA_GRANDE_DE_IRPF) {
+    } else if (salarioIR <= valorPara.ALIQUOTA_GRANDE_E_PARCELA_GRANDE_DE_IRPF) {
       return salarioIR * TAXA_ALIQUOTA_GRANDE - PARCELA_GRANDE_DE_IRPF;
     }
     return salarioIR * TAXA_MAXIMA - PARCELA_MAXIMA;
