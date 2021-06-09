@@ -4,6 +4,7 @@ import api from '../../services/api';
 import styles from './styles.module.scss';
 import { HTTP } from '../../util/constants';
 import * as func from '../../util/functions';
+import { Link } from 'react-router-dom';
 
 interface employee {
   id: number;
@@ -65,7 +66,9 @@ function EmployeeTable() {
               <td>{employee.dependents}</td>
               <td className={styles.tdRight}>{`R$ ${employeeIRPF(employee)}`}</td>
               <td>
-                <button>editar</button>/
+                <Link to="/create-employee">
+                  <button>editar</button>/
+                </Link>
                 <button onClick={() => deleteEmployee(employee.id)}>deletar</button>
               </td>
             </tr>
