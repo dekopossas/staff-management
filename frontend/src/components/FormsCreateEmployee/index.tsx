@@ -17,7 +17,7 @@ function FormsCreateEmployee() {
   const { register, handleSubmit } = useForm<Profile>();
   
   const history = useHistory();
-  const params = useParams();
+  const { id } = useParams();
 
   const backWindow = () => {
     history.goBack()
