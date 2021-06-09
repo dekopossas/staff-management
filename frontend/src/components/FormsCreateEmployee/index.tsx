@@ -16,7 +16,7 @@ type Profile = {
 
 function FormsCreateEmployee() {
   const { register, handleSubmit } = useForm<Profile>();
-  const [ model, setModel ] = useState<Profile>({
+  const [ employee, setEmployee ] = useState<Profile>({
     fullName: '',
     cpf: '',
     wage: '',
@@ -24,9 +24,9 @@ function FormsCreateEmployee() {
     dependents: '',
   });
 
-  function updateModel (e: ChangeEvent<HTMLInputElement>) {
-    setModel({
-      ...model,
+  function updateEmployee (e: ChangeEvent<HTMLInputElement>) {
+    setEmployee({
+      ...employee,
       [e.target.name]: e.target.value
     })
   }
