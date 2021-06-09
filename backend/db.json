@@ -39,6 +39,14 @@
       "wage": "10000",
       "discount": "713.1",
       "dependents": "4"
+    },
+    {
+      "fullName": "André de Castro Possas",
+      "cpf": "10866788697",
+      "wage": "3000",
+      "discount": "120",
+      "dependents": "1",
+      "id": 6
     }
   ]
 }

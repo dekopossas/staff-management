@@ -6,9 +6,9 @@ interface employee {
   id:number,
   fullName: string,
   cpf: string,
-  wage: number,
-  discount: number,
-  dependents: number
+  wage: string,
+  discount: string,
+  dependents: string
 }
 
 function EmployeeTable() {
@@ -45,9 +45,10 @@ function EmployeeTable() {
                 <tr key={employee.id}>
                   <td>{employee.fullName}</td>
                   <td>{employee.cpf}</td>
-                  <td>{employee.wage}</td>
-                  <td>{employee.discount}</td>
-                  <td>{employee.dependents}</td>
+                  <td>{parseInt(employee.wage)}</td>
+                  <td>{parseInt(employee.discount)}</td>
+                  <td>{parseInt(employee.dependents)}</td>
+                  <td>valor calculado</td>
                 </tr>
               ))
             }
