@@ -14,8 +14,8 @@ interface employee {
   dependents: string;
 }
 
-export const defineSalarioIR = (valoresParaCalculoDeTaxa: employee) => {
-  const{ wage, discount, dependents } = valoresParaCalculoDeTaxa
+export const defineSalarioIR = (valoresParaCalculoDoSalarioIR: employee) => {
+  const{ wage, discount, dependents } = valoresParaCalculoDoSalarioIR
   const salario = parseInt(wage)
   const desconto = parseFloat(discount)
   const dependentes = parseInt(dependents) * deducao.POR_DEPENDETE
