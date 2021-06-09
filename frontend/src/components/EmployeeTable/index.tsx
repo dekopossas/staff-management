@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
+import api from '../../services/api';
 import styles from './styles.module.scss';
 import * as func from '../../util/functions';
 
@@ -16,10 +17,9 @@ function EmployeeTable() {
   const [employees, setEmployees] = useState<[employee]>();
 
   async function loadData() {
-    const response = await fetch('http://localhost:3001/employees');
-    const data = await response.json();
+    const response = await api.get('/employees');
 
-    setEmployees(data);
+    setEmployees(response.data);
   }
 
   const employeeIRPF = (employee: employee) => {
