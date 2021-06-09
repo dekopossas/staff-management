@@ -23,6 +23,13 @@ function EmployeeTable() {
 
   const arrayDeVariaveisCalculadas = [];
 
+  const DEDUCAO = 164.56
+
+  const defineSalarioIR = (salario: number, dependentes: number, desconto:number) => {
+    const resultado = (salario - desconto - (dependentes * DEDUCAO))
+    return resultado
+  }
+
   const calculaVariavel = () => {
     employees?.forEach((employee, index) => {
 
