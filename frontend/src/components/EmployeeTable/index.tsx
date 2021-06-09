@@ -101,7 +101,7 @@ function EmployeeTable() {
               <td>{employee.wage}</td>
               <td>{employee.discount}</td>
               <td>{employee.dependents}</td>
-              <td>{}</td>
+              <td>{descontaAliquotaEIRPF(defineSalarioIR(employee)).toFixed(2)}</td>
             </tr>
           ))}
         </tbody>
