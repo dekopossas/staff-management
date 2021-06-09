@@ -9,7 +9,7 @@ const Routes = () => {
     <Switch>
       <Route path="/" exact component={ Home } />
       <Route path="/create-employee" exact component={ CreateEmployee } />
-      <Route path="/edit-employee" exact component={ EditEmployee } />
+      <Route path="/edit-employee/:id" exact component={ EditEmployee } />
     </Switch>
   );
 };
