@@ -31,9 +31,6 @@ function FormsCreateEmployee() {
 
   // Preferiria fazer a validação separada com mais calma, esse trecho merece um refactor
   const onSubmit = handleSubmit(async (data: Profile) => {
-    if(id !== undefined) {
-      findEmployee(id)
-    }
     const {fullName, cpf, wage, dependents, discount} = data;
     if(fullName !== '' && cpf !== '' && wage !== '' && dependents !== '' && discount !== '') {
       const response = await api.post('/employees', data);
