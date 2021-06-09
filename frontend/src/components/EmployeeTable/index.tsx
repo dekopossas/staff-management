@@ -30,6 +30,9 @@ function EmployeeTable() {
     return resultado
   }
 
+  console.log(defineSalarioIR(5000, 1, 122));
+  
+
   const calculaVariavel = () => {
     employees?.forEach((employee, index) => {
 
