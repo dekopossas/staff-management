@@ -56,6 +56,12 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+input[type="button"] {
+  border-radius: 20px;
+  height: 40px;
+  cursor: pointer;
+}
+
 // validações
 
 .errorValidation {
