@@ -21,6 +21,14 @@ function EmployeeTable() {
     setEmployees(data);
   }
 
+  const arrayDeVariaveisCalculadas = [];
+
+  const calculaVariavel = () => {
+    employees?.forEach((employee, index) => {
+
+    })
+  }
+
   useEffect(() => {
     loadData();
   }, [])
