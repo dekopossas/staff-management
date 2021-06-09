@@ -30,7 +30,7 @@ function EmployeeTable() {
 
   const deleteEmployee = async (id: number) => {
     const response = await api.delete(`/employees/${id}`);
-    if (response.status === HTTP.CREATED){
+    if (response.status === HTTP.SUCCESS){
       document.location.reload(true)
     } else {
       alert('algo deu errado')
