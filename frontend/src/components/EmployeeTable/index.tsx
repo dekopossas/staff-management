@@ -20,12 +20,12 @@ function EmployeeTable() {
     const response = await api.get('/employees');
 
     setEmployees(response.data);
-  }
+  };
 
   const employeeIRPF = (employee: employee) => {
-    return func.descontaAliquotaEIRPF(func.defineSalarioIR(employee)).toFixed(2)
-  }
-  
+    return func.descontaAliquotaEIRPF(func.defineSalarioIR(employee)).toFixed(2);
+  };
+
   useEffect(() => {
     loadData();
   }, []);
@@ -50,12 +50,11 @@ function EmployeeTable() {
             <tr key={employee.id}>
               <td className={styles.tdLeft}>{employee.fullName}</td>
               <td className={styles.tdLeft}>{employee.cpf}</td>
-              <td className={styles.tdRight}>{`R$ ${(parseInt(employee.wage)).toFixed(2)}`}</td>
-              <td className={styles.tdRight}>{`R$ ${(parseInt(employee.discount)).toFixed(2)}`}</td>
+              <td className={styles.tdRight}>{`R$ ${parseInt(employee.wage).toFixed(2)}`}</td>
+              <td className={styles.tdRight}>{`R$ ${parseInt(employee.discount).toFixed(2)}`}</td>
               <td>{employee.dependents}</td>
               <td className={styles.tdRight}>{`R$ ${employeeIRPF(employee)}`}</td>
-              <button>editar</button>/
-              <button>deletar</button>
+              <button>editar</button>/<button>deletar</button>
             </tr>
           ))}
         </tbody>
