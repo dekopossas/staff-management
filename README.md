@@ -124,9 +124,9 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [TypeScript](https://www.typescriptlang.org/) Linguagem
 - [MATERIAL-UI](https://material-ui.com/pt/) UI expirience
 - [axios](https://github.com/axios/axios) Promise based HTTP client
-- [date-fns](time library)
-- [react hook form](https://react-hook-form.com/)
-- [SASS](https://sass-lang.com/)
+- [date-fns](https://date-fns.org/)time library
+- [react hook form](https://react-hook-form.com/) forms library
+- [SASS](https://sass-lang.com/) CSS
 
 ### Autor
 ---
