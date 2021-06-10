@@ -13,7 +13,7 @@ function Header() {
     <header className={styles.header}>
       <img className={styles.logo} src="/logo.png" alt="logo" />
 
-      <p>Staff CRUD Manager</p>
+      <p>Gerenciamento de Equipe</p>
 
       <span>{currentDate}</span>
     </header>
