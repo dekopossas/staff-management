@@ -21,6 +21,32 @@ Tabela de conteúdos
    * [Tecnologias](#tecnologias)
 <!--te-->
 
-<h4 align="center"> 
+<h2 align="center"> 
 	🚧  React Select 🚀 Em construção...  🚧
-</h4>
+</h2>
+
+## Features
+### Obrigatorios.
+
+- [x] Código Fonte Público
+- [x] React Utilizado
+- [ ] Testes Unitários
+- [x] Calculo de IRPF
+- [x] Cadastro de Funcionário
+- [x] CRUD Funcionário
+- [ ] Utilização de REDUX
+- [x] Readme
+- [x] Rotas
+
+### Diferenciais.
+- [x] TypeScript
+- [x] Projeto Funcional
+
+### Não Avaliados.
+- [ ] Cadastro de usuário
+- [ ] Tela de Login
+- [ ] Estilização SASS moderno
+- [x] Header
+- [ ] Footer
+- [ ] REDUX SAGA 
+
