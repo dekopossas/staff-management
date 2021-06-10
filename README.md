@@ -8,7 +8,10 @@
 Tabela de conteúdos
 =================
 <!--ts-->
-   * [Sobre](#Sobre)
+   * [Features](#Features)
+   	* [Obrigatorios](#Obrigatorios)	
+   	* [Diferenciais](#Diferenciais)
+   	* [Não Avaliados](#Não Avaliados)
    * [Tabela de Conteudo](#tabela-de-conteudo)
    * [Instalação](#instalacao)
    * [Como usar](#como-usar)
