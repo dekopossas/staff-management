@@ -11,15 +11,13 @@ Tabela de conteúdos
    * [Features](#Features)
       * [Obrigatorios](#Obrigatorios)	
       * [Diferenciais](#Diferenciais)
-   * [Instalação](#instalacao)
-   * [Como usar](#como-usar)
-      * [Pre Requisitos](#pre-requisitos)
-      * [Local files](#local-files)
-      * [Remote files](#remote-files)
-      * [Multiple files](#multiple-files)
-      * [Combo](#combo)
-   * [Tests](#testes)
+   * [ScreenShots](#ScreenShots)
+   * [Pré-requisitos](#Pré-requisitos)		
+   * [Clone o projeto](#Clone o projeto)
+   * [Rodando o Back End](#Rodando o Back End)
+   * [Rodando o Front End](#Rodando o Front End)
    * [Tecnologias](#tecnologias)
+   * [Autor](#Autor)
 <!--te-->
 
 <h2 align="center"> 
@@ -98,6 +96,7 @@ $ npm start
 ### O servidor inciará na porta:3001 -
 OBS, adicionei 750 milissegundos de delay manualmente para as requisições tentando simular uma requisição realista.
 
+### 🎲 Rodando o Front End (site)
 Em um novo terminal na pasta local do projeto siga este passo a passo:
 
 ```bash
@@ -129,4 +128,11 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [react hook form](https://react-hook-form.com/)
 - [SASS](https://sass-lang.com/)
 
+### Autor
+---
 
+Feito com ❤️ por André Possas 👋🏽 Entre em contato!
+
+![Badge](https://img.shields.io/badge/André-Possas-%237159c1?style=for-the-badge)
+[![Gmail Badge](https://img.shields.io/badge/-andrepossaster@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:andrepossaster@gmail.com)](andrepossaster@gmail.com)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=for-the-badge-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/andrepossas/)](https://www.linkedin.com/in/andrepossas/)
