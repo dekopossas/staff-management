@@ -9,10 +9,8 @@ Tabela de conteúdos
 =================
 <!--ts-->
    * [Features](#Features)
-   	* [Obrigatorios](#Obrigatorios)	
-   	* [Diferenciais](#Diferenciais)
-   	* [Não Avaliados](#Não Avaliados)
-   * [Tabela de Conteudo](#tabela-de-conteudo)
+      * [Obrigatorios](#Obrigatorios)	
+      * [Diferenciais](#Diferenciais)
    * [Instalação](#instalacao)
    * [Como usar](#como-usar)
       * [Pre Requisitos](#pre-requisitos)
@@ -52,4 +50,14 @@ Tabela de conteúdos
 - [x] Header
 - [ ] Footer
 - [ ] REDUX SAGA 
+- [ ] trocar logo
+
+
+# ScreenShots
+
+<h1 align="center">
+  <img alt="primeira página" title="#FirstPage" src="./assets/firstpage.png" />
+</h1>
+
+
 
