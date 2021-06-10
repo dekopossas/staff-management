@@ -46,6 +46,10 @@ function FormsEmployee() {
     history.goBack();
   };
 
+  const validarEFormatarCPF = () => {
+    
+  }
+
   // Preferiria fazer a validação separada com mais calma, esse trecho merece um refactor
   const onSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
