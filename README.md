@@ -43,13 +43,17 @@ Tabela de conteúdos
 
 ### Não Avaliados.
 - [ ] Cadastro de usuário
-- [ ] Tela de Login
-- [ ] Estilização SASS moderno
 - [x] Header
 - [ ] Footer
 - [ ] REDUX SAGA 
 - [ ] trocar logo
 
+### Urgencia.
+- [ ] Refatoração de Validação de Cadastro e editar Funcionário
+- [ ] Estilização SASS moderno
+- [ ] Tela de Login
+- [ ] JWT
+- [ ] Formatação de CPF
 
 # ScreenShots
 
