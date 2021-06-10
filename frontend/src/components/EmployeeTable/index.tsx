@@ -4,6 +4,7 @@ import api from '../../services/api';
 import styles from './styles.module.scss';
 import { HTTP } from '../../util/constants';
 import * as func from '../../util/functions';
+import { Link } from 'react-router-dom';
 
 interface employee {
   id: number;
@@ -29,7 +30,7 @@ function EmployeeTable() {
 
   const deleteEmployee = async (id: number) => {
     const response = await api.delete(`/employees/${id}`);
-    if (response.status === HTTP.CREATED){
+    if (response.status === HTTP.SUCCESS){
       document.location.reload(true)
     } else {
       alert('algo deu errado')
@@ -65,7 +66,9 @@ function EmployeeTable() {
               <td>{employee.dependents}</td>
               <td className={styles.tdRight}>{`R$ ${employeeIRPF(employee)}`}</td>
               <td>
-                <button>editar</button>/
+                <Link to={`/edit-employee/${employee.id}`}>
+                  <button>editar</button>/
+                </Link>
                 <button onClick={() => deleteEmployee(employee.id)}>deletar</button>
               </td>
             </tr>

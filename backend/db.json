@@ -39,6 +39,17 @@
       "wage": "10000",
       "discount": "713.1",
       "dependents": "4"
+<<<<<<< HEAD
+=======
+    },
+    {
+      "fullName": "Diana de Castro Possas",
+      "cpf": "1000000000",
+      "wage": "3000",
+      "discount": "270",
+      "dependents": "3",
+      "id": 6
+>>>>>>> 46c15e0f562967206ac08ec50e151be16cb40bdc
     }
   ]
 }
