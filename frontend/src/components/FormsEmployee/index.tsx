@@ -82,7 +82,7 @@ function FormsEmployee() {
 
   return (
     <div className={styles.container}>
-      {id ? <h1>Editando Funcionario</h1> : <h1>Cadastrando Funcionario</h1>}
+      {id ? <h1>Editando Funcionário</h1> : <h1>Cadastrando Funcionario</h1>}
       <form onSubmit={onSubmit} className={styles.form}>
         <div className={styles.fullBox}>
           <label htmlFor="fullName">Nome do Funcionário:</label>
