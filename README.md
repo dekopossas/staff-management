@@ -114,3 +114,19 @@ Aguarde até abrir o navegador na porta 3000
 
 Caso esteje usando o pacote yarn, alem do comando ser diferente, deverá abrir o navegador manualmente na porta 3000
 recomento seguir a [documentação](https://classic.yarnpkg.com/en/)
+
+
+### 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [Json Server](https://github.com/typicode/json-server) Backend
+- [React](https://pt-br.reactjs.org/) Framework
+- [TypeScript](https://www.typescriptlang.org/) Linguagem
+- [MATERIAL-UI](https://material-ui.com/pt/) UI expirience
+- [axios](https://github.com/axios/axios) Promise based HTTP client
+- [date-fns](time library)
+- [react hook form](https://react-hook-form.com/)
+- [SASS](https://sass-lang.com/)
+
+
