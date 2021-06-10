@@ -55,8 +55,17 @@ Tabela de conteúdos
 
 # ScreenShots
 
-<h1 align="center">
-  <img alt="primeira página" title="#FirstPage" src="./assets/firstpage.png" />
+<h1 align="left">
+  <img alt="primeira página" title="#FirstPage" src="./assets/firstPage.png" />
+</h1>
+<h1 align="right">
+  <img alt="primeira página" title="#FirstPage" src="./assets/cadastro.png" />
+</h1>
+<h1 align="left">
+  <img alt="primeira página" title="#FirstPage" src="./assets/edit.png" />
+</h1>
+<h1 align="right">
+  <img alt="primeira página" title="#FirstPage" src="./assets/taxaCalculo.png" />
 </h1>
 
 
