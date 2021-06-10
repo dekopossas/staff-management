@@ -38,16 +38,17 @@ Tabela de conteúdos
 
 ### Não Avaliados.
 - [ ] Cadastro de usuário
+- [x] validação do botão de cadastro e editar Funcionário
 - [x] Header
 - [ ] Footer
 - [ ] REDUX SAGA 
-- [ ] trocar logo
+- [ ] trocar a logo
+- [ ] Tela de Login
+- [ ] JWT
 
 ### Urgencia.
 - [ ] Refatoração de Validação de Cadastro e editar Funcionário
 - [ ] Estilização SASS moderno
-- [ ] Tela de Login
-- [ ] JWT
 - [ ] Formatação de CPF
 
 # ScreenShots
