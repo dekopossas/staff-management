@@ -9,13 +9,8 @@ Tabela de conteúdos
 =================
 <!--ts-->
    * [Features](#Features)
-      * [Obrigatorios](#Obrigatorios)	
-      * [Diferenciais](#Diferenciais)
    * [ScreenShots](#ScreenShots)
-   * [Pré-requisitos](#Pré-requisitos)		
-   * [Clone o projeto](#Clone o projeto)
-   * [Rodando o Back End](#Rodando o Back End)
-   * [Rodando o Front End](#Rodando o Front End)
+   * [Instalação](#Instalação)	
    * [Tecnologias](#tecnologias)
    * [Autor](#Autor)
 <!--te-->
@@ -43,16 +38,17 @@ Tabela de conteúdos
 
 ### Não Avaliados.
 - [ ] Cadastro de usuário
+- [x] validação do botão de cadastro e editar Funcionário
 - [x] Header
 - [ ] Footer
 - [ ] REDUX SAGA 
-- [ ] trocar logo
+- [ ] trocar a logo
+- [ ] Tela de Login
+- [ ] JWT
 
 ### Urgencia.
 - [ ] Refatoração de Validação de Cadastro e editar Funcionário
 - [ ] Estilização SASS moderno
-- [ ] Tela de Login
-- [ ] JWT
 - [ ] Formatação de CPF
 
 # ScreenShots
@@ -70,7 +66,7 @@ Tabela de conteúdos
   <img alt="primeira página" title="#FirstPage" src="./assets/taxaCalculo.png" />
 </h1>
 
-### Pré-requisitos
+## Instalação
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
