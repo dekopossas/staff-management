@@ -68,5 +68,49 @@ Tabela de conteúdos
   <img alt="primeira página" title="#FirstPage" src="./assets/taxaCalculo.png" />
 </h1>
 
+### Pré-requisitos
 
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
+### Clone o projeto:
+Abra o terminal de comandos e digite:
+```bash
+git clone git@github.com:dekopossas/staff-management.git
+```
+ou acesse esse [link](git@github.com:dekopossas/staff-management.git) e baixe o zip.
+
+### 🎲 Rodando o Back End (servidor)
+O foco do projeto era demonstrar minhas habilidades com frontend, portanto utilizei o backend que considero o mais simples possível e fácil de fazer, Json Server.
+Na pasta do projeto, abra seu terminal e siga o passo a passo:
+
+```bash
+# Acesse a pasta do projeto backend
+$ cd backend
+
+# Instale as dependências
+$ npm install
+
+# Inicíe o Backend com o comando:
+$ npm start
+```
+### O servidor inciará na porta:3001 -
+OBS, adicionei 750 milissegundos de delay manualmente para as requisições tentando simular uma requisição realista.
+
+Em um novo terminal na pasta local do projeto siga este passo a passo:
+
+```bash
+# Acesse a pasta do projeto frontend
+$ cd frontend
+
+# Instale as dependências
+$ npm install
+
+# Inicíe o Frontend com o comando:
+$ npm start
+```
+Aguarde até abrir o navegador na porta 3000
+
+Caso esteje usando o pacote yarn, alem do comando ser diferente, deverá abrir o navegador manualmente na porta 3000
+recomento seguir a [documentação](https://classic.yarnpkg.com/en/)
