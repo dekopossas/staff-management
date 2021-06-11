@@ -1,8 +1,8 @@
 import {
-  valorPara,
-  taxa,
-  parcela,
-  deducao,
+  VALOR_PARA,
+  TAXA,
+  PARCELA,
+  DEDUCAO,
 } from './constants';
 
 interface employee {
@@ -18,7 +18,7 @@ export const defineSalarioIR = (valoresParaCalculoDoSalarioIR: employee) => {
   const{ wage, discount, dependents } = valoresParaCalculoDoSalarioIR
   const salario = parseInt(wage)
   const desconto = parseFloat(discount)
-  const dependentes = parseInt(dependents) * deducao.POR_DEPENDETE
+  const dependentes = parseInt(dependents) * DEDUCAO.POR_DEPENDETE
   
   const resultado_SALARIOIR = salario - desconto - dependentes;
   
@@ -26,14 +26,14 @@ export const defineSalarioIR = (valoresParaCalculoDoSalarioIR: employee) => {
 };
 
 export const descontaAliquotaEIRPF = (salarioIR: number) => {
-  if (salarioIR <= valorPara.ISENCAO) {
+  if (salarioIR <= VALOR_PARA.ISENCAO) {
     return salarioIR;
-  } else if (salarioIR <= valorPara.ALIQUOTA_MENOR_E_PARCELA_MENOR_DE_IRPF) {
-    return salarioIR * taxa.ALIQUOTA_MENOR - parcela.MENOR_IRPF;
-  } else if (salarioIR <= valorPara.ALIQUOTA_MEDIA_E_PARCELA_MEDIA_DE_IRPF) {
-    return salarioIR * taxa.ALIQUOTA_MEDIA - parcela.MEDIA_DE_IRPF;
-  } else if (salarioIR <= valorPara.ALIQUOTA_GRANDE_E_PARCELA_GRANDE_DE_IRPF) {
-    return salarioIR * taxa.ALIQUOTA_GRANDE - parcela.GRANDE_DE_IRPF;
+  } else if (salarioIR <= VALOR_PARA.ALIQUOTA_MENOR_E_PARCELA_MENOR_DE_IRPF) {
+    return salarioIR * TAXA.ALIQUOTA_MENOR - PARCELA.MENOR_IRPF;
+  } else if (salarioIR <= VALOR_PARA.ALIQUOTA_MEDIA_E_PARCELA_MEDIA_DE_IRPF) {
+    return salarioIR * TAXA.ALIQUOTA_MEDIA - PARCELA.MEDIA_DE_IRPF;
+  } else if (salarioIR <= VALOR_PARA.ALIQUOTA_GRANDE_E_PARCELA_GRANDE_DE_IRPF) {
+    return salarioIR * TAXA.ALIQUOTA_GRANDE - PARCELA.GRANDE_DE_IRPF;
   }
-  return salarioIR * taxa.MAXIMA - parcela.MAXIMA;
+  return salarioIR * TAXA.MAXIMA - PARCELA.MAXIMA;
 };
