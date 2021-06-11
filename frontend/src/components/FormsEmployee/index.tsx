@@ -47,7 +47,7 @@ function FormsEmployee() {
   };
 
   const validarEFormatarCPF = () => {
-    
+
   }
 
   // Preferiria fazer a validação separada com mais calma, esse trecho merece um refactor
@@ -102,6 +102,8 @@ function FormsEmployee() {
         <div className={styles.halfBox}>
           <label htmlFor="cpf">CPF:</label>
           <input
+            max="99999999999"
+            min="10000000000"
             value={employee.cpf}
             type="number"
             onChange={(event: ChangeEvent<HTMLInputElement>) => updateEmployee(event)}
