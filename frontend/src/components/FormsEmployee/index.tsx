@@ -21,11 +21,11 @@ function FormsEmployee() {
     dependents: '',
   });
 
-  function updateEmployee (e: ChangeEvent<HTMLInputElement>) {
+  function updateEmployee(e: ChangeEvent<HTMLInputElement>) {
     setEmployee({
       ...employee,
-      [e.target.name]: e.target.value
-    })
+      [e.target.name]: e.target.value,
+    });
   }
 
   const history = useHistory();
@@ -46,6 +46,15 @@ function FormsEmployee() {
     history.goBack();
   };
 
+  const cpf = '10866788697';
+
+  const formataCPF = (cpf: string) => {
+    cpf = cpf.replace(/[^\d]/g, '');
+    return cpf.replace(/^(\{3})(\{3})(\{3})(\{2})/, '$1.$2.$3-$');
+  };
+
+  console.log(formataCPF(cpf));
+
   // Preferiria fazer a validação separada com mais calma, esse trecho merece um refactor
   const onSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -61,14 +70,13 @@ function FormsEmployee() {
         }
       } else {
         const response = await api.post('/employees', employee);
-      
+
         if (response.status === HTTP.CREATED) {
           history.push('/');
         } else {
           alert('Erro ao cadastrar o usuário');
         }
       }
-
     } else {
       alert('Preencha todos os dados, Por favor.');
     }
@@ -98,6 +106,8 @@ function FormsEmployee() {
         <div className={styles.halfBox}>
           <label htmlFor="cpf">CPF:</label>
           <input
+            max="99999999999"
+            min="10000000000"
             value={employee.cpf}
             type="number"
             onChange={(event: ChangeEvent<HTMLInputElement>) => updateEmployee(event)}
@@ -148,12 +158,7 @@ function FormsEmployee() {
           />
         </div>
         <div className={styles.fullBox}>
-          <input
-            type="button"
-            value="Voltar"
-            id="btn-submit"
-            onClick={backWindow}
-          />
+          <input type="button" value="Voltar" id="btn-submit" onClick={backWindow} />
         </div>
       </form>
     </div>
